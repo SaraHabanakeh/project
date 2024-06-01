@@ -5,26 +5,18 @@ namespace App\Entity;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ProductRepository::class)
- */
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
     private ?int $id = null;
 
-    /**
-     * @ORM\Column(length=255)
-     */
+    #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    /**
-     * @ORM\Column
-     */
+    #[ORM\Column]
     private ?int $value = null;
 
     public function getId(): ?int
@@ -37,7 +29,7 @@ class Product
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name): static
     {
         $this->name = $name;
 
@@ -49,7 +41,7 @@ class Product
         return $this->value;
     }
 
-    public function setValue(int $value): self
+    public function setValue(int $value): static
     {
         $this->value = $value;
 

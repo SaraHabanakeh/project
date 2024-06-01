@@ -137,12 +137,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardGraphic.php"><a href="files/src-card-cardgraphic.html"><abbr title="src/Card/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Class representing a playing card with a suit and value.</p>
+            <p class="phpdocumentor-summary">Class CardGraphic</p>
 
+    <section class="phpdocumentor-description"><p>Represents graphical representation of cards based on their suit and value.</p>
+</section>
 
 
 
@@ -175,6 +177,7 @@
     <span>
                         &nbsp;: array&lt;string, array&lt;int, string&gt;&gt;            </span>
 </dt>
+<dd>An array representing the graphical representation of the cards.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/App-Card-Card.html#property_suit">$suit</a>
@@ -215,7 +218,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Get a string representation of the card.</dd>
+<dd>Get the card as a string representation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-Card.html#method_getSuit">getSuit()</a>
@@ -229,6 +232,7 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
+<dd>Get the suit of the card.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Card-Card.html#method_getValue">getValue()</a>
@@ -267,22 +271,17 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardGraphic.php"><a href="files/src-card-cardgraphic.html"><abbr title="src/Card/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">An array representing the graphical representation of the cards.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">array&lt;string, array&lt;int, string&gt;&gt;</span>
     <span class="phpdocumentor-signature__name">$representation</span>
-     = <span class="phpdocumentor-signature__default-value">[
-    // Define the representation array
-    &#039;diamond&#039; =&gt; [&#039;1&#039; =&gt; &#039;🃁&#039;, &#039;2&#039; =&gt; &#039;🃂&#039;, &#039;3&#039; =&gt; &#039;🃃&#039;, &#039;4&#039; =&gt; &#039;🃄&#039;, &#039;5&#039; =&gt; &#039;🃅&#039;, &#039;6&#039; =&gt; &#039;🃆&#039;, &#039;7&#039; =&gt; &#039;🃇&#039;, &#039;8&#039; =&gt; &#039;🃈&#039;, &#039;9&#039; =&gt; &#039;🃉&#039;, &#039;10&#039; =&gt; &#039;🃊&#039;, &#039;11&#039; =&gt; &#039;🃋&#039;, &#039;12&#039; =&gt; &#039;🃍&#039;, &#039;13&#039; =&gt; &#039;🃎&#039;],
-    &#039;clover&#039; =&gt; [&#039;1&#039; =&gt; &#039;🃑&#039;, &#039;2&#039; =&gt; &#039;🃒&#039;, &#039;3&#039; =&gt; &#039;🃓&#039;, &#039;4&#039; =&gt; &#039;🃔&#039;, &#039;5&#039; =&gt; &#039;🃕&#039;, &#039;6&#039; =&gt; &#039;🃖&#039;, &#039;7&#039; =&gt; &#039;🃗&#039;, &#039;8&#039; =&gt; &#039;🃘&#039;, &#039;9&#039; =&gt; &#039;🃙&#039;, &#039;10&#039; =&gt; &#039;🃚&#039;, &#039;11&#039; =&gt; &#039;🃛&#039;, &#039;12&#039; =&gt; &#039;🃝&#039;, &#039;13&#039; =&gt; &#039;🃞&#039;],
-    &#039;heart&#039; =&gt; [&#039;1&#039; =&gt; &#039;🂱&#039;, &#039;2&#039; =&gt; &#039;🂲&#039;, &#039;3&#039; =&gt; &#039;🂳&#039;, &#039;4&#039; =&gt; &#039;🂴&#039;, &#039;5&#039; =&gt; &#039;🂵&#039;, &#039;6&#039; =&gt; &#039;🂶&#039;, &#039;7&#039; =&gt; &#039;🂷&#039;, &#039;8&#039; =&gt; &#039;🂸&#039;, &#039;9&#039; =&gt; &#039;🂹&#039;, &#039;10&#039; =&gt; &#039;🂺&#039;, &#039;11&#039; =&gt; &#039;🂻&#039;, &#039;12&#039; =&gt; &#039;🂽&#039;, &#039;13&#039; =&gt; &#039;🂾&#039;],
-    &#039;spades&#039; =&gt; [&#039;1&#039; =&gt; &#039;🂡&#039;, &#039;2&#039; =&gt; &#039;🂢&#039;, &#039;3&#039; =&gt; &#039;🂣&#039;, &#039;4&#039; =&gt; &#039;🂤&#039;, &#039;5&#039; =&gt; &#039;🂥&#039;, &#039;6&#039; =&gt; &#039;🂦&#039;, &#039;7&#039; =&gt; &#039;🂧&#039;, &#039;8&#039; =&gt; &#039;🂨&#039;, &#039;9&#039; =&gt; &#039;🂩&#039;, &#039;10&#039; =&gt; &#039;🂪&#039;, &#039;11&#039; =&gt; &#039;🂫&#039;, &#039;12&#039; =&gt; &#039;🂭&#039;, &#039;13&#039; =&gt; &#039;🂮&#039;],
-]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;diamond&#039; =&gt; [&#039;1&#039; =&gt; &#039;🃁&#039;, &#039;2&#039; =&gt; &#039;🃂&#039;, &#039;3&#039; =&gt; &#039;🃃&#039;, &#039;4&#039; =&gt; &#039;🃄&#039;, &#039;5&#039; =&gt; &#039;🃅&#039;, &#039;6&#039; =&gt; &#039;🃆&#039;, &#039;7&#039; =&gt; &#039;🃇&#039;, &#039;8&#039; =&gt; &#039;🃈&#039;, &#039;9&#039; =&gt; &#039;🃉&#039;, &#039;10&#039; =&gt; &#039;🃊&#039;, &#039;11&#039; =&gt; &#039;🃋&#039;, &#039;12&#039; =&gt; &#039;🃍&#039;, &#039;13&#039; =&gt; &#039;🃎&#039;], &#039;clover&#039; =&gt; [&#039;1&#039; =&gt; &#039;🃑&#039;, &#039;2&#039; =&gt; &#039;🃒&#039;, &#039;3&#039; =&gt; &#039;🃓&#039;, &#039;4&#039; =&gt; &#039;🃔&#039;, &#039;5&#039; =&gt; &#039;🃕&#039;, &#039;6&#039; =&gt; &#039;🃖&#039;, &#039;7&#039; =&gt; &#039;🃗&#039;, &#039;8&#039; =&gt; &#039;🃘&#039;, &#039;9&#039; =&gt; &#039;🃙&#039;, &#039;10&#039; =&gt; &#039;🃚&#039;, &#039;11&#039; =&gt; &#039;🃛&#039;, &#039;12&#039; =&gt; &#039;🃝&#039;, &#039;13&#039; =&gt; &#039;🃞&#039;], &#039;heart&#039; =&gt; [&#039;1&#039; =&gt; &#039;🂱&#039;, &#039;2&#039; =&gt; &#039;🂲&#039;, &#039;3&#039; =&gt; &#039;🂳&#039;, &#039;4&#039; =&gt; &#039;🂴&#039;, &#039;5&#039; =&gt; &#039;🂵&#039;, &#039;6&#039; =&gt; &#039;🂶&#039;, &#039;7&#039; =&gt; &#039;🂷&#039;, &#039;8&#039; =&gt; &#039;🂸&#039;, &#039;9&#039; =&gt; &#039;🂹&#039;, &#039;10&#039; =&gt; &#039;🂺&#039;, &#039;11&#039; =&gt; &#039;🂻&#039;, &#039;12&#039; =&gt; &#039;🂽&#039;, &#039;13&#039; =&gt; &#039;🂾&#039;], &#039;spades&#039; =&gt; [&#039;1&#039; =&gt; &#039;🂡&#039;, &#039;2&#039; =&gt; &#039;🂢&#039;, &#039;3&#039; =&gt; &#039;🂣&#039;, &#039;4&#039; =&gt; &#039;🂤&#039;, &#039;5&#039; =&gt; &#039;🂥&#039;, &#039;6&#039; =&gt; &#039;🂦&#039;, &#039;7&#039; =&gt; &#039;🂧&#039;, &#039;8&#039; =&gt; &#039;🂨&#039;, &#039;9&#039; =&gt; &#039;🂩&#039;, &#039;10&#039; =&gt; &#039;🂪&#039;, &#039;11&#039; =&gt; &#039;🂫&#039;, &#039;12&#039; =&gt; &#039;🂭&#039;, &#039;13&#039; =&gt; &#039;🂮&#039;]]</span></code>
 
     
     
@@ -484,11 +483,11 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardGraphic.php"><a href="files/src-card-cardgraphic.html"><abbr title="src/Card/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get a string representation of the card.</p>
+        <p class="phpdocumentor-summary">Get the card as a string representation.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -506,7 +505,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>A string representation of the card (e.g., &quot;10 of hearts&quot;).</p>
+                <section class="phpdocumentor-description"><p>The graphical representation of the card.</p>
 </section>
 
             </section>
@@ -568,11 +567,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardGraphic.php"><a href="files/src-card-cardgraphic.html"><abbr title="src/Card/CardGraphic.php">CardGraphic.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Get the suit of the card.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSuitClass</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
@@ -588,6 +588,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The suit of the card.</p>
+</section>
+
             </section>
 
 </article>

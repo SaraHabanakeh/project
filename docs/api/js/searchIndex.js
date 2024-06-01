@@ -43,42 +43,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CardGraphic",
             "name": "CardGraphic",
-            "summary": "Class\u0020representing\u0020a\u0020playing\u0020card\u0020with\u0020a\u0020suit\u0020and\u0020value.",
+            "summary": "Class\u0020CardGraphic",
             "url": "classes/App-Card-CardGraphic.html"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "Get\u0020a\u0020string\u0020representation\u0020of\u0020the\u0020card.",
+            "summary": "Get\u0020the\u0020card\u0020as\u0020a\u0020string\u0020representation.",
             "url": "classes/App-Card-CardGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003AgetSuitClass\u0028\u0029",
             "name": "getSuitClass",
-            "summary": "",
+            "summary": "Get\u0020the\u0020suit\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-CardGraphic.html#method_getSuitClass"
         },                {
             "fqsen": "\\App\\Card\\CardGraphic\u003A\u003A\u0024representation",
             "name": "representation",
-            "summary": "",
+            "summary": "An\u0020array\u0020representing\u0020the\u0020graphical\u0020representation\u0020of\u0020the\u0020cards.",
             "url": "classes/App-Card-CardGraphic.html#property_representation"
         },                {
             "fqsen": "\\App\\Card\\CardHand",
             "name": "CardHand",
-            "summary": "",
+            "summary": "Class\u0020CardHand",
             "url": "classes/App-Card-CardHand.html"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AaddCard\u0028\u0029",
             "name": "addCard",
-            "summary": "",
+            "summary": "Adds\u0020a\u0020card\u0020to\u0020the\u0020hand.",
             "url": "classes/App-Card-CardHand.html#method_addCard"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "Gets\u0020all\u0020the\u0020cards\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Card-CardHand.html#method_getCards"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AtotalValue\u0028\u0029",
             "name": "totalValue",
-            "summary": "",
+            "summary": "Calculates\u0020the\u0020total\u0020value\u0020of\u0020the\u0020cards\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Card-CardHand.html#method_totalValue"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003A\u0024cards",
@@ -88,27 +88,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CoinGraphic",
             "name": "CoinGraphic",
-            "summary": "",
+            "summary": "Class\u0020CoinGraphic",
             "url": "classes/App-Card-CoinGraphic.html"
         },                {
             "fqsen": "\\App\\Card\\CoinGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "CoinGraphic\u0020constructor.",
             "url": "classes/App-Card-CoinGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\CoinGraphic\u003A\u003AgetBalance\u0028\u0029",
             "name": "getBalance",
-            "summary": "",
+            "summary": "Get\u0020the\u0020balance\u0020of\u0020the\u0020coin.",
             "url": "classes/App-Card-CoinGraphic.html#method_getBalance"
         },                {
             "fqsen": "\\App\\Card\\CoinGraphic\u003A\u003AadjustBalance\u0028\u0029",
             "name": "adjustBalance",
-            "summary": "",
+            "summary": "Adjusts\u0020the\u0020balance\u0020of\u0020the\u0020coin\u0020by\u0020a\u0020given\u0020amount.",
             "url": "classes/App-Card-CoinGraphic.html#method_adjustBalance"
         },                {
             "fqsen": "\\App\\Card\\CoinGraphic\u003A\u003AgetGraphicRepresentation\u0028\u0029",
             "name": "getGraphicRepresentation",
-            "summary": "",
+            "summary": "Get\u0020the\u0020graphical\u0020representation\u0020of\u0020the\u0020coin\u0020balance.",
             "url": "classes/App-Card-CoinGraphic.html#method_getGraphicRepresentation"
         },                {
             "fqsen": "\\App\\Card\\CoinGraphic\u003A\u003A\u0024balance",
@@ -118,37 +118,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "",
+            "summary": "Class\u0020DeckOfCards",
             "url": "classes/App-Card-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructs\u0020a\u0020new\u0020DeckOfCards\u0020object\u0020with\u0020a\u0020standard\u0020deck\u0020of\u002052\u0020cards.",
             "url": "classes/App-Card-DeckOfCards.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "Get\u0020all\u0020the\u0020cards\u0020in\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_getCards"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetSortedCards\u0028\u0029",
             "name": "getSortedCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020sorted\u0020representation\u0020of\u0020the\u0020cards\u0020in\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_getSortedCards"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
-            "summary": "",
+            "summary": "Shuffle\u0020the\u0020cards\u0020in\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_shuffle"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AdrawCard\u0028\u0029",
             "name": "drawCard",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020card\u0020from\u0020the\u0020top\u0020of\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_drawCard"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AcountCards\u0028\u0029",
             "name": "countCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020number\u0020of\u0020cards\u0020remaining\u0020in\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_countCards"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A\u0024cards",
@@ -158,67 +158,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Player",
             "name": "Player",
-            "summary": "",
+            "summary": "Class\u0020Player",
             "url": "classes/App-Card-Player.html"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Player\u0020constructor.",
             "url": "classes/App-Card-Player.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "",
+            "summary": "Get\u0020the\u0020name\u0020of\u0020the\u0020player.",
             "url": "classes/App-Card-Player.html#method_getName"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AaddCard\u0028\u0029",
             "name": "addCard",
-            "summary": "",
+            "summary": "Add\u0020a\u0020card\u0020to\u0020the\u0020player\u0027s\u0020hand.",
             "url": "classes/App-Card-Player.html#method_addCard"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetHandValue\u0028\u0029",
             "name": "getHandValue",
-            "summary": "",
+            "summary": "Get\u0020the\u0020total\u0020value\u0020of\u0020the\u0020player\u0027s\u0020hand.",
             "url": "classes/App-Card-Player.html#method_getHandValue"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "",
+            "summary": "Get\u0020the\u0020player\u0027s\u0020hand\u0020of\u0020cards.",
             "url": "classes/App-Card-Player.html#method_getHand"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AisBusted\u0028\u0029",
             "name": "isBusted",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020player\u0027s\u0020hand\u0020is\u0020busted\u0020\u0028total\u0020value\u0020\u003E\u002021\u0029.",
             "url": "classes/App-Card-Player.html#method_isBusted"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AhasBlackJack\u0028\u0029",
             "name": "hasBlackJack",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020player\u0020has\u0020a\u0020blackjack\u0020\u0028total\u0020value\u0020\u003D\u003D\u002021\u0020and\u00202\u0020cards\u0029.",
             "url": "classes/App-Card-Player.html#method_hasBlackJack"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetBalance\u0028\u0029",
             "name": "getBalance",
-            "summary": "",
+            "summary": "Get\u0020the\u0020balance\u0020of\u0020the\u0020player\u0027s\u0020coins.",
             "url": "classes/App-Card-Player.html#method_getBalance"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AadjustBalance\u0028\u0029",
             "name": "adjustBalance",
-            "summary": "",
+            "summary": "Adjust\u0020the\u0020balance\u0020of\u0020the\u0020player\u0027s\u0020coins\u0020by\u0020a\u0020given\u0020amount.",
             "url": "classes/App-Card-Player.html#method_adjustBalance"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetBalanceGraphic\u0028\u0029",
             "name": "getBalanceGraphic",
-            "summary": "",
+            "summary": "Get\u0020the\u0020graphical\u0020representation\u0020of\u0020the\u0020player\u0027s\u0020coin\u0020balance.",
             "url": "classes/App-Card-Player.html#method_getBalanceGraphic"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetStatus\u0028\u0029",
             "name": "getStatus",
-            "summary": "",
+            "summary": "Get\u0020the\u0020status\u0020of\u0020the\u0020player.",
             "url": "classes/App-Card-Player.html#method_getStatus"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AsetStatus\u0028\u0029",
             "name": "setStatus",
-            "summary": "",
+            "summary": "Set\u0020the\u0020status\u0020of\u0020the\u0020player.",
             "url": "classes/App-Card-Player.html#method_setStatus"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003A\u0024name",
@@ -481,6 +481,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-PresentationController.html#method_lucky"
         },                {
+            "fqsen": "\\App\\Controller\\PresentationController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-PresentationController.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Controller\\PresentationController\u003A\u003Aapi\u0028\u0029",
             "name": "api",
             "summary": "",
@@ -533,27 +538,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\Dice",
             "name": "Dice",
-            "summary": "",
+            "summary": "Class\u0020Dice",
             "url": "classes/App-Dice-Dice.html"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Dice\u0020constructor.",
             "url": "classes/App-Dice-Dice.html#method___construct"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003Aroll\u0028\u0029",
             "name": "roll",
-            "summary": "",
+            "summary": "Rolls\u0020the\u0020die\u0020and\u0020sets\u0020its\u0020value\u0020to\u0020a\u0020random\u0020integer\u0020between\u00201\u0020and\u00206.",
             "url": "classes/App-Dice-Dice.html#method_roll"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020current\u0020value\u0020of\u0020the\u0020die.",
             "url": "classes/App-Dice-Dice.html#method_getValue"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020string\u0020representation\u0020of\u0020the\u0020die\u0027s\u0020current\u0020value.",
             "url": "classes/App-Dice-Dice.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003A\u0024value",
@@ -563,17 +568,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic",
             "name": "DiceGraphic",
-            "summary": "",
+            "summary": "Class\u0020DiceGraphic",
             "url": "classes/App-Dice-DiceGraphic.html"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "DiceGraphic\u0020constructor.",
             "url": "classes/App-Dice-DiceGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020graphical\u0020representation\u0020of\u0020the\u0020die\u0027s\u0020current\u0020value.",
             "url": "classes/App-Dice-DiceGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003A\u0024representation",
@@ -583,37 +588,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\DiceHand",
             "name": "DiceHand",
-            "summary": "",
+            "summary": "Class\u0020DiceHand",
             "url": "classes/App-Dice-DiceHand.html"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "",
+            "summary": "Adds\u0020a\u0020die\u0020to\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_add"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aroll\u0028\u0029",
             "name": "roll",
-            "summary": "",
+            "summary": "Rolls\u0020all\u0020dice\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_roll"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetNumberDices\u0028\u0029",
             "name": "getNumberDices",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020number\u0020of\u0020dice\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_getNumberDices"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetValues\u0028\u0029",
             "name": "getValues",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020array\u0020containing\u0020the\u0020values\u0020of\u0020all\u0020dice\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_getValues"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Asum\u0028\u0029",
             "name": "sum",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020sum\u0020of\u0020all\u0020dice\u0020values\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_sum"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
-            "summary": "",
+            "summary": "Returns\u0020an\u0020array\u0020containing\u0020the\u0020graphical\u0020representations\u0020of\u0020all\u0020dice\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_getString"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003A\u0024hand",
@@ -778,12 +783,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue\u0028\u0029",
             "name": "findByMinimumValue",
-            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one.",
+            "summary": "Find\u0020all\u0020products\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one.",
             "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue"
         },                {
             "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue2\u0028\u0029",
             "name": "findByMinimumValue2",
-            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one\u0020with\u0020SQL.",
+            "summary": "Find\u0020all\u0020products\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one\u0020using\u0020SQL.",
             "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue2"
         },                {
             "fqsen": "\\",

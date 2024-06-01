@@ -134,11 +134,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-        
+            <p class="phpdocumentor-summary">Class DiceHand</p>
+
+    <section class="phpdocumentor-description"><p>Represents a hand of dice.</p>
+</section>
 
 
 
@@ -185,36 +188,42 @@
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Adds a die to the hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Dice-DiceHand.html#method_getNumberDices">getNumberDices()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
+<dd>Returns the number of dice in the hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Dice-DiceHand.html#method_getString">getString()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
+<dd>Returns an array containing the graphical representations of all dice in the hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Dice-DiceHand.html#method_getValues">getValues()</a>
     <span>
                                 &nbsp;: array&lt;string|int, int&gt;    </span>
 </dt>
+<dd>Returns an array containing the values of all dice in the hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Dice-DiceHand.html#method_roll">roll()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
+<dd>Rolls all dice in the hand.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-Dice-DiceHand.html#method_sum">sum()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
+<dd>Returns the sum of all dice values in the hand.</dd>
 
     </dl>
 
@@ -246,7 +255,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 
     </aside>
 
@@ -258,7 +267,9 @@
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-    
+        <section class="phpdocumentor-description"><p>An array containing dice objects.</p>
+</section>
+
     
 
     
@@ -286,11 +297,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Adds a die to the hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Dice-Dice.html"><abbr title="\App\Dice\Dice">Dice</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$die</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -305,7 +317,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Dice-Dice.html"><abbr title="\App\Dice\Dice">Dice</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The die to add to the hand.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -329,11 +343,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the number of dice in the hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNumberDices</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
@@ -349,6 +364,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The number of dice in the hand.</p>
+</section>
+
             </section>
 
 </article>
@@ -366,11 +385,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns an array containing the graphical representations of all dice in the hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
@@ -386,6 +406,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An array containing the graphical representations of all dice in the hand.</p>
+</section>
+
             </section>
 
 </article>
@@ -403,11 +427,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns an array containing the values of all dice in the hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getValues</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
@@ -423,6 +448,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An array containing the values of all dice in the hand.</p>
+</section>
+
             </section>
 
 </article>
@@ -440,11 +469,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Rolls all dice in the hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">roll</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -473,11 +503,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Dice/DiceHand.php"><a href="files/src-dice-dicehand.html"><abbr title="src/Dice/DiceHand.php">DiceHand.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns the sum of all dice values in the hand.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">sum</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
@@ -493,6 +524,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The sum of all dice values in the hand.</p>
+</section>
+
             </section>
 
 </article>
