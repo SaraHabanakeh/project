@@ -333,3 +333,13 @@ bf2edc,::1,GET,http://localhost:8888/library/,1717260330,,200,request
 ad7152,::1,GET,http://localhost:8888/api/game,1717260342,feee37,500,request
 feee37,::1,GET,http://localhost:8888/api/game,1717260342,,500,request
 ee1f50,::1,GET,http://localhost:8888/api/library/books,1717260345,,200,request
+bf889e,::1,GET,http://localhost:8888/,1717267299,,200,request
+3d444a,::1,GET,http://localhost:8888/metrics/,1717267301,,200,request
+1b528e,::1,GET,http://localhost:8888/game/,1717267529,,200,request
+d6d745,::1,GET,http://localhost:8888/setup,1717267531,,200,request
+65f785,::1,POST,http://localhost:8888/start,1717267541,,200,request
+7f48ff,::1,POST,http://localhost:8888/hit/0,1717267543,,200,request
+0686f1,::1,POST,http://localhost:8888/stay/0,1717267545,,200,request
+a3b424,::1,POST,http://localhost:8888/hit/1,1717267546,,200,request
+991947,::1,POST,http://localhost:8888/hit/2,1717267548,,302,request
+35df98,::1,GET,http://localhost:8888/dealer,1717267548,,200,request
