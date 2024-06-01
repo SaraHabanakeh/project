@@ -28,21 +28,26 @@ class BookController extends AbstractController
     {
         if ($request->isMethod('POST')) {
             $data = $request->request->all();
+    
+            // Lägg till loggning för att se inkommande data
+            file_put_contents('php://stdout', print_r($data, true));
+    
             $book = new Book();
             $book->setTitle($data['title']);
             $book->setAuthor($data['author']);
             $book->setIsbn($data['isbn']);
             $book->setImage($data['image']);
-
+    
             $entityManager = $doctrine->getManager();
             $entityManager->persist($book);
             $entityManager->flush();
-
+    
             return $this->redirectToRoute('app_book');
         }
-
+    
         return $this->render('book/create.html.twig');
     }
+    
 
     #[Route('/library/{title}', name: 'show_book')]
     public function showBook(BookRepository $bookRepository, string $title): Response

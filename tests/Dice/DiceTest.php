@@ -1,41 +1,36 @@
 <?php
 
-namespace App\Dice;
+namespace App\Tests\Dice;
 
+use App\Dice\Dice;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Test cases for class Dice.
- */
 class DiceTest extends TestCase
 {
-    /**
-     * Construct object and verify that the object has the expected
-     * properties, use no arguments.
-     */
-    public function testCreateDice(): void
+    public function testRoll(): void
     {
-        $die = new Dice();
-        $this->assertInstanceOf(Dice::class, $die);
+        $dice = new Dice();
+        $value = $dice->roll();
 
-        $res = $die->getAsString();
-        $this->assertNotEmpty($res);
+        $this->assertIsInt($value);
+        $this->assertGreaterThanOrEqual(1, $value);
+        $this->assertLessThanOrEqual(6, $value);
     }
 
-    /**
-     * Create a mocked object that always returns 6.
-     */
-    public function testStubRollDiceLastRoll(): void
+    public function testGetValue(): void
     {
-        // Create a stub for the Dice class.
-        $stub = $this->createMock(Dice::class);
+        $dice = new Dice();
+        $value = $dice->roll();
 
-        // Configure the stub.
-        $stub->method('roll')
-             ->willReturn(6);
+        $this->assertEquals($value, $dice->getValue());
+    }
 
-        $res = $stub->roll();
-        $exp = 6;
-        $this->assertEquals($exp, $res);
+    public function testGetAsString(): void
+    {
+        $dice = new Dice();
+        $value = $dice->roll();
+
+        $expectedString = '[' . $value . ']';
+        $this->assertEquals($expectedString, $dice->getAsString());
     }
 }

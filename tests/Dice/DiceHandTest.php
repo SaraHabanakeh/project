@@ -30,4 +30,32 @@ class DiceHandTest extends TestCase
         $res = $dicehand->sum();
         $this->assertEquals(12, $res);
     }
+    public function testRoll(): void
+    {
+        $diceHand = new DiceHand();
+        $dice1 = new Dice();
+        $dice2 = new Dice();
+
+        $diceHand->add($dice1);
+        $diceHand->add($dice2);
+
+        $diceHand->roll();
+
+        $this->assertContains($dice1->getValue(), $diceHand->getValues());
+        $this->assertContains($dice2->getValue(), $diceHand->getValues());
+    }
+    public function testSum(): void
+    {
+        $diceHand = new DiceHand();
+        $dice1 = new Dice();
+        $dice2 = new Dice();
+
+        $diceHand->add($dice1);
+        $diceHand->add($dice2);
+
+        $diceHand->roll();
+
+        $this->assertEquals($dice1->getValue() + $dice2->getValue(), $diceHand->sum());
+    }
+
 }

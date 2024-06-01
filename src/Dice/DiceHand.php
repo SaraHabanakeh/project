@@ -1,25 +1,35 @@
 <?php
 
-//namespace App\Dice;:
-//Denna rad deklarerar att klassen DiceHand tillhör namespace App\Dice.
-// Detta hjälper till att organisera klasser i olika namnområden för att undvika konflikter med klassnamn.
-
 namespace App\Dice;
 
-use App\Dice\Dice;
-
+/**
+ * Class DiceHand
+ * 
+ * Represents a hand of dice.
+ */
 class DiceHand
 {
     /**
-     * @var Dice[]
+     * @var Dice[] An array containing dice objects.
      */
     private array $hand = [];
 
+    /**
+     * Adds a die to the hand.
+     * 
+     * @param Dice $die The die to add to the hand.
+     * @return void
+     */
     public function add(Dice $die): void
     {
         $this->hand[] = $die;
     }
 
+    /**
+     * Rolls all dice in the hand.
+     * 
+     * @return void
+     */
     public function roll(): void
     {
         foreach ($this->hand as $die) {
@@ -27,13 +37,20 @@ class DiceHand
         }
     }
 
+    /**
+     * Returns the number of dice in the hand.
+     * 
+     * @return int The number of dice in the hand.
+     */
     public function getNumberDices(): int
     {
         return count($this->hand);
     }
 
     /**
-     * @return int[]
+     * Returns an array containing the values of all dice in the hand.
+     * 
+     * @return int[] An array containing the values of all dice in the hand.
      */
     public function getValues(): array
     {
@@ -44,6 +61,11 @@ class DiceHand
         return $values;
     }
 
+    /**
+     * Returns the sum of all dice values in the hand.
+     * 
+     * @return int The sum of all dice values in the hand.
+     */
     public function sum(): int
     {
         $sum = 0;
@@ -53,9 +75,10 @@ class DiceHand
         return $sum;
     }
 
-
     /**
-     * @return string[]
+     * Returns an array containing the graphical representations of all dice in the hand.
+     * 
+     * @return string[] An array containing the graphical representations of all dice in the hand.
      */
     public function getString(): array
     {

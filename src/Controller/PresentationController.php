@@ -38,6 +38,12 @@ class PresentationController extends AbstractController
         ]);
     }
 
+    #[Route('metrics/', name:'code_metrics')]
+    public function metrics(): Response
+    {
+        return $this->render('home/metrics.html.twig');
+    }
+
     #[Route('/api', name:'api')]
     public function api(): Response
     {

@@ -4,14 +4,19 @@ namespace App\Card;
 
 use App\Card\Card;
 
+/**
+ * Class CardGraphic
+ * 
+ * Represents graphical representation of cards based on their suit and value.
+ */
 class CardGraphic extends Card
 {
     /**
-     * Class represent the cards based on their suit and value.
+     * An array representing the graphical representation of the cards.
+     * 
+     * @var array<string, array<int, string>>
      */
-    /** @var array<string, array<int, string>> */
     private array $representation = [
-        // Define the representation array
         'diamond' => [
             '1' => '🃁',
             '2' => '🃂',
@@ -74,6 +79,11 @@ class CardGraphic extends Card
         ],
     ];
 
+    /**
+     * Get the card as a string representation.
+     * 
+     * @return string The graphical representation of the card.
+     */
     public function getAsString(): string
     {
         $suit = $this->getSuit();
@@ -86,6 +96,11 @@ class CardGraphic extends Card
         }
     }
 
+    /**
+     * Get the suit of the card.
+     * 
+     * @return string The suit of the card.
+     */
     public function getSuitClass(): string
     {
         return $this->getSuit();
