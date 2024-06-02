@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelTestDebugContainer::class, false)) {
 
 return new \ContainerQ9CgAcj\App_KernelTestDebugContainer([
     'container.build_hash' => 'Q9CgAcj',
-    'container.build_id' => '02a7ccf0',
-    'container.build_time' => 1717333530,
+    'container.build_id' => '54f8220f',
+    'container.build_time' => 1717334050,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerQ9CgAcj');
