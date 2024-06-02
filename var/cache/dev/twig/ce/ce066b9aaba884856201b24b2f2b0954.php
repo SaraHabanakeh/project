@@ -26,14 +26,13 @@ class __TwigTemplate_81d15704197467c71a65a0597230c4e7 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'main' => [$this, 'block_main'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
-        // line 3
+        // line 2
         return "base6.html.twig";
     }
 
@@ -46,7 +45,7 @@ class __TwigTemplate_81d15704197467c71a65a0597230c4e7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "book/create.html.twig"));
 
-        $this->parent = $this->loadTemplate("base6.html.twig", "book/create.html.twig", 3);
+        $this->parent = $this->loadTemplate("base6.html.twig", "book/create.html.twig", 2);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -56,27 +55,7 @@ class __TwigTemplate_81d15704197467c71a65a0597230c4e7 extends Template
 
     }
 
-    // line 5
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        yield "Add New Book";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        return; yield '';
-    }
-
-    // line 7
+    // line 4
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,27 +65,25 @@ class __TwigTemplate_81d15704197467c71a65a0597230c4e7 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
+        // line 5
+        yield "    <h1>Create new Book</h1>
+
+    ";
+        // line 7
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form_start');
+        yield "
+        ";
         // line 8
-        yield "    <h1>Add New Book</h1>
-    <form method=\"post\">
-        <div>
-            <label for=\"title\">Title:</label>
-            <input type=\"text\" id=\"title\" name=\"title\" required>
-        </div>
-        <div>
-            <label for=\"author\">Author:</label>
-            <input type=\"text\" id=\"author\" name=\"author\" required>
-        </div>
-        <div>
-            <label for=\"isbn\">ISBN:</label>
-            <input type=\"text\" id=\"isbn\" name=\"isbn\" required>
-        </div>
-        <div>
-            <label for=\"image\">Image URL:</label>
-            <input type=\"text\" id=\"image\" name=\"image\">
-        </div>
-        <button type=\"submit\">Save</button>
-    </form>
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 8, $this->source); })()), 'widget');
+        yield "
+        <button class=\"btn\">";
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 9, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+        yield "</button>
+    ";
+        // line 10
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_end');
+        yield "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -138,38 +115,21 @@ class __TwigTemplate_81d15704197467c71a65a0597230c4e7 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  90 => 8,  80 => 7,  60 => 5,  37 => 3,);
+        return array (  85 => 10,  81 => 9,  77 => 8,  73 => 7,  69 => 5,  59 => 4,  36 => 2,);
     }
 
     public function getSourceContext()
     {
         return new Source("{# templates/book/create.html.twig #}
-
 {% extends 'base6.html.twig' %}
 
-{% block title %}Add New Book{% endblock %}
-
 {% block main %}
-    <h1>Add New Book</h1>
-    <form method=\"post\">
-        <div>
-            <label for=\"title\">Title:</label>
-            <input type=\"text\" id=\"title\" name=\"title\" required>
-        </div>
-        <div>
-            <label for=\"author\">Author:</label>
-            <input type=\"text\" id=\"author\" name=\"author\" required>
-        </div>
-        <div>
-            <label for=\"isbn\">ISBN:</label>
-            <input type=\"text\" id=\"isbn\" name=\"isbn\" required>
-        </div>
-        <div>
-            <label for=\"image\">Image URL:</label>
-            <input type=\"text\" id=\"image\" name=\"image\">
-        </div>
-        <button type=\"submit\">Save</button>
-    </form>
+    <h1>Create new Book</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
 {% endblock %}
 ", "book/create.html.twig", "/Users/sarahabanakeh/dbwebb-kurser/mvc/me/report/templates/book/create.html.twig");
     }

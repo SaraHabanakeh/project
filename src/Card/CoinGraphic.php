@@ -4,7 +4,7 @@ namespace App\Card;
 
 /**
  * Class CoinGraphic
- * 
+ *
  * Represents a graphical representation of a coin balance.
  */
 class CoinGraphic
@@ -16,7 +16,7 @@ class CoinGraphic
 
     /**
      * CoinGraphic constructor.
-     * 
+     *
      * @param float $balance The initial balance of the coin (default is 0).
      */
     public function __construct(float $balance = 0)
@@ -26,7 +26,7 @@ class CoinGraphic
 
     /**
      * Get the balance of the coin.
-     * 
+     *
      * @return float The balance of the coin.
      */
     public function getBalance(): float
@@ -36,7 +36,7 @@ class CoinGraphic
 
     /**
      * Adjusts the balance of the coin by a given amount.
-     * 
+     *
      * @param float $amount The amount by which to adjust the balance.
      * @return void
      */
@@ -47,7 +47,7 @@ class CoinGraphic
 
     /**
      * Get the graphical representation of the coin balance.
-     * 
+     *
      * @return string The graphical representation of the coin balance.
      */
     public function getGraphicRepresentation(): string

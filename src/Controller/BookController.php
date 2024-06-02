@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
+use App\Form\BookType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,10 +14,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookController extends AbstractController
 {
     #[Route('library/', name: 'app_book')]
-    public function book(ManagerRegistry $doctrine): Response
+    public function index(BookRepository $bookRepository): Response
     {
-        $repository = $doctrine->getRepository(Book::class);
-        $books = $repository->findAll();
+        $books = $bookRepository->findAll();
 
         return $this->render('book/index.html.twig', [
             'books' => $books,
@@ -24,33 +24,14 @@ class BookController extends AbstractController
     }
 
     #[Route('/library/create', name: 'book_new')]
-    public function new(Request $request, ManagerRegistry $doctrine): Response
+    public function create(Request $request, ManagerRegistry $doctrine): Response
     {
-        if ($request->isMethod('POST')) {
-            $data = $request->request->all();
-    
-            // Lägg till loggning för att se inkommande data
-            file_put_contents('php://stdout', print_r($data, true));
-    
-            $book = new Book();
-            $book->setTitle($data['title']);
-            $book->setAuthor($data['author']);
-            $book->setIsbn($data['isbn']);
-            $book->setImage($data['image']);
-    
-            $entityManager = $doctrine->getManager();
-            $entityManager->persist($book);
-            $entityManager->flush();
-    
-            return $this->redirectToRoute('app_book');
-        }
-    
-        return $this->render('book/create.html.twig');
+        $book = new Book();
+        return $this->handleForm($request, $doctrine, $book, 'book/create.html.twig');
     }
-    
 
     #[Route('/library/{title}', name: 'show_book')]
-    public function showBook(BookRepository $bookRepository, string $title): Response
+    public function show(BookRepository $bookRepository, string $title): Response
     {
         $book = $bookRepository->findOneBy(['title' => $title]);
 
@@ -68,35 +49,13 @@ class BookController extends AbstractController
     {
         $bookRepository = $doctrine->getRepository(Book::class);
         $book = $bookRepository->findOneBy(['title' => $title]);
-
-        if ($request->isMethod('POST')) {
-            $data = $request->request->all();
-            $book->setTitle($data['title']);
-            $book->setAuthor($data['author']);
-            $book->setIsbn($data['isbn']);
-            $book->setImage($data['image']);
-
-            $entityManager = $doctrine->getManager();
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_book');
-        }
-
-        return $this->render('book/edit.html.twig', [
-            'book' => $book
-        ]);
-
+        return $this->handleForm($request, $doctrine, $book, 'book/edit.html.twig');
     }
 
     #[Route('/library/delete/{title}', name: 'delete_book')]
     public function delete(BookRepository $bookRepository, ManagerRegistry $doctrine, string $title): Response
     {
         $book = $bookRepository->findOneBy(['title' => $title]);
-
-        if (!$book) {
-            throw $this->createNotFoundException('The book does not exist');
-        }
-
         $entityManager = $doctrine->getManager();
         $entityManager->remove($book);
         $entityManager->flush();
@@ -105,27 +64,40 @@ class BookController extends AbstractController
     }
 
     #[Route('/api/library/books', name: 'show_books')]
-    public function showAllBook(
-        BookRepository $bookRepository
-    ): Response {
-        $books = $bookRepository
-            ->findAll();
+    public function apiIndex(BookRepository $bookRepository): Response
+    {
+        $books = $bookRepository->findAll();
 
-        $response = $this->json($books);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
+        return $this->json($books, Response::HTTP_OK, [], ['json_encode_options' => JSON_PRETTY_PRINT]);
     }
 
     #[Route('api/library/book/{isbn}', name: 'book_by_isbn', methods: ['GET'])]
-    public function showBookByIsbn(BookRepository $bookRepository, int $isbn): Response
+    public function apiShow(BookRepository $bookRepository, int $isbn): Response
     {
-        $book = $bookRepository->findBookByIsbn($isbn);
+        $book = $bookRepository->findOneBy(['isbn' => $isbn]);
+
+        if (!$book) {
+            throw $this->createNotFoundException('The book does not exist');
+        }
 
         return $this->json($book);
     }
 
+    private function handleForm(Request $request, ManagerRegistry $doctrine, Book $book, string $template): Response
+    {
+        $form = $this->createForm(BookType::class, $book);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $doctrine->getManager();
+            $entityManager->persist($book);
+            $entityManager->flush();
 
+            return $this->redirectToRoute('app_book');
+        }
+
+        return $this->render($template, [
+            'form' => $form->createView(),
+        ]);
+    }
 }

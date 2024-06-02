@@ -6,14 +6,14 @@ use App\Card\Card;
 
 /**
  * Class CardGraphic
- * 
+ *
  * Represents graphical representation of cards based on their suit and value.
  */
 class CardGraphic extends Card
 {
     /**
      * An array representing the graphical representation of the cards.
-     * 
+     *
      * @var array<string, array<int, string>>
      */
     private array $representation = [
@@ -81,7 +81,7 @@ class CardGraphic extends Card
 
     /**
      * Get the card as a string representation.
-     * 
+     *
      * @return string The graphical representation of the card.
      */
     public function getAsString(): string
@@ -98,7 +98,7 @@ class CardGraphic extends Card
 
     /**
      * Get the suit of the card.
-     * 
+     *
      * @return string The suit of the card.
      */
     public function getSuitClass(): string

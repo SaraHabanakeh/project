@@ -170,8 +170,32 @@ Man kan förbättra koden genom Att refaktorisera BookController-klassen för at
 <h4>Minska Cyklomatisk Komplexitet:</h4><p> Hög cyklomatisk komplexitet gör koden svår att förstå och underhålla. jag kommer att bryta ner komplexa funktioner i mindre, med mer hanterbara delar kan vi minska denna komplexitet.</p>
 
 
-
-
+<p>Efter att ha implementerat förbättringarna, utökat enhetstesterna, lagt till dockblock till klasserna och brutit ner koden till mindre funktioner i BlackJackGame controllen, har jag lyckats öka kodtäckningen till 48%. Scrutinizer Code Quality har dock bara ökat något till 5.57, vilket innebär att jag inte lyckades göra en stor förändring i komplexitet. Tidigare var kodtäckningen 17% och Scrutinizer Code Quality 5.5. Förbättringsåtgärderna inkluderade att öka omfattande tester för koden. Jag lade också till dockblock-kommentarer till alla klasser och metoder för att förbättra läsbarheten och underlätta förståelsen av koden. Vidare refaktorerade jag stora metoder genom att dela upp dem i mindre, mer hanterbara funktioner, vilket minskade komplexiteten och förbättrade läsbarheten. Trots dessa förbättringar var det svårt att göra en dramatisk förändring i komplexitetspoängen, vilket kan bero på att den grundläggande strukturen i applikationen fortfarande innehåller vissa komplexa beroenden eller designmönster som behöver en mer djupgående refaktorisering.</p>
+<ul>
+    <li>
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc5/\">
+            <img src=\"";
+        // line 84
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/quality2.png"), "html", null, true);
+        yield "\" alt=\"Code Quality\" class=\"img5\">
+        </a>
+    </li>
+    <li>
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc5/\">
+            <img src=\"";
+        // line 89
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/coverage2.png"), "html", null, true);
+        yield "\" alt=\"Code Coverage\" class=\"img5\">
+        </a>
+    </li>
+    <li>
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc5/\" >
+            <img src=\"";
+        // line 94
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/build2.png"), "html", null, true);
+        yield "\" alt=\"Build Status\" class=\"img5\">
+        </a>
+    </li>
 
 ";
         
@@ -204,7 +228,7 @@ Man kan förbättra koden genom Att refaktorisera BookController-klassen för at
      */
     public function getDebugInfo()
     {
-        return array (  160 => 68,  152 => 63,  144 => 58,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  195 => 94,  187 => 89,  179 => 84,  160 => 68,  152 => 63,  144 => 58,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -288,8 +312,23 @@ Man kan förbättra koden genom Att refaktorisera BookController-klassen för at
 <h4>Minska Cyklomatisk Komplexitet:</h4><p> Hög cyklomatisk komplexitet gör koden svår att förstå och underhålla. jag kommer att bryta ner komplexa funktioner i mindre, med mer hanterbara delar kan vi minska denna komplexitet.</p>
 
 
-
-
+<p>Efter att ha implementerat förbättringarna, utökat enhetstesterna, lagt till dockblock till klasserna och brutit ner koden till mindre funktioner i BlackJackGame controllen, har jag lyckats öka kodtäckningen till 48%. Scrutinizer Code Quality har dock bara ökat något till 5.57, vilket innebär att jag inte lyckades göra en stor förändring i komplexitet. Tidigare var kodtäckningen 17% och Scrutinizer Code Quality 5.5. Förbättringsåtgärderna inkluderade att öka omfattande tester för koden. Jag lade också till dockblock-kommentarer till alla klasser och metoder för att förbättra läsbarheten och underlätta förståelsen av koden. Vidare refaktorerade jag stora metoder genom att dela upp dem i mindre, mer hanterbara funktioner, vilket minskade komplexiteten och förbättrade läsbarheten. Trots dessa förbättringar var det svårt att göra en dramatisk förändring i komplexitetspoängen, vilket kan bero på att den grundläggande strukturen i applikationen fortfarande innehåller vissa komplexa beroenden eller designmönster som behöver en mer djupgående refaktorisering.</p>
+<ul>
+    <li>
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc5/\">
+            <img src=\"{{ asset('img/quality2.png') }}\" alt=\"Code Quality\" class=\"img5\">
+        </a>
+    </li>
+    <li>
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc5/\">
+            <img src=\"{{ asset('img/coverage2.png') }}\" alt=\"Code Coverage\" class=\"img5\">
+        </a>
+    </li>
+    <li>
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc5/\" >
+            <img src=\"{{ asset('img/build2.png') }}\" alt=\"Build Status\" class=\"img5\">
+        </a>
+    </li>
 
 {% endblock %}
 ", "home/metrics.html.twig", "/Users/sarahabanakeh/dbwebb-kurser/mvc/me/report/templates/home/metrics.html.twig");

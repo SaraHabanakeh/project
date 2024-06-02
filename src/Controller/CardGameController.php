@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Card\DeckOfCards;
 use App\Card\CardHand;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,12 +15,9 @@ class CardGameController extends AbstractController
     #[Route("/session", name: "session_debug")]
     public function showSession(SessionInterface $session): Response
     {
-        $deck = $session->get('deck');
-        $hand = $session->get('hand');
-
         return $this->render('card/session.html.twig', [
-            'deck' => $deck,
-            'hand' => $hand
+            'deck' => $session->get('deck'),
+            'hand' => $session->get('hand')
         ]);
     }
 
@@ -30,7 +26,6 @@ class CardGameController extends AbstractController
     {
         $session->clear();
         $this->addFlash('success', 'Session has been successfully deleted ✔️.');
-
         return $this->redirectToRoute('session_debug');
     }
 
@@ -41,66 +36,55 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck", name: "card_deck")]
-    public function test(): Response
+    public function showDeck(): Response
     {
         $deck = new DeckOfCards();
-        $groupedCards = $deck->getsortedCards();
-
         return $this->render('card/deck.html.twig', [
-            'groupedCards' => $groupedCards,
+            'groupedCards' => $deck->getSortedCards(),
         ]);
     }
 
     #[Route("/card/deck/shuffle", name: "card_shuffle")]
     public function shuffleDeck(SessionInterface $session): Response
     {
-        $this->deleteSession($session);
-
+        $session->clear();
         $deck = new DeckOfCards();
         $deck->shuffle();
-        $shuffledCards = $deck->getCards();
-
         return $this->render('card/card_shuffle.html.twig', [
-            'shuffledCards' => $shuffledCards,
+            'shuffledCards' => $deck->getCards(),
         ]);
     }
 
     #[Route("/card/deck/draw", name:"card_draw")]
-    public function drawCardDeck(Request $request, SessionInterface $session): Response
+    public function drawCard(SessionInterface $session): Response
     {
-        /** @var DeckOfCards $deck */
         $deck = $session->get('deck', new DeckOfCards());
-        /** @var CardHand $hand */
         $hand = $session->get('hand', new CardHand());
 
         $drawnCard = $deck->drawCard();
-        if ($drawnCard !== null) {
+        if ($drawnCard) {
             $hand->addCard($drawnCard);
         }
 
         $session->set('deck', $deck);
         $session->set('hand', $hand);
 
-        $cardsRemaining = count($deck->getCards());
-
         return $this->render('card/draw_card.html.twig', [
             'drawnCard' => $drawnCard,
-            'cardsRemaining' => $cardsRemaining,
+            'cardsRemaining' => count($deck->getCards()),
         ]);
     }
 
     #[Route("/card/deck/draw/{num}", name:"card_draw_number")]
-    public function drawCardNum(Request $request, SessionInterface $session, int $num): Response
+    public function drawMultipleCards(SessionInterface $session, int $num): Response
     {
-        /** @var DeckOfCards $deck */
         $deck = $session->get('deck', new DeckOfCards());
-        /** @var CardHand $hand */
         $hand = $session->get('hand', new CardHand());
 
         $drawnCards = [];
         for ($i = 0; $i < $num; $i++) {
             $drawnCard = $deck->drawCard();
-            if ($drawnCard !== null) {
+            if ($drawnCard) {
                 $hand->addCard($drawnCard);
                 $drawnCards[] = $drawnCard;
             } else {
@@ -110,11 +94,10 @@ class CardGameController extends AbstractController
 
         $session->set('deck', $deck);
         $session->set('hand', $hand);
-        $cardsRemaining = count($deck->getCards());
 
         return $this->render('card/draw_cards.html.twig', [
             'drawnCards' => $drawnCards,
-            'cardsRemaining' => $cardsRemaining,
+            'cardsRemaining' => count($deck->getCards()),
         ]);
     }
 }

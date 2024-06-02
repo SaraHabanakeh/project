@@ -43,9 +43,29 @@ class BlackJackGame extends AbstractController
     #[Route("/start", name: "game_start", methods: ["POST"])]
     public function start(Request $request, SessionInterface $session): Response
     {
-        $players = $this->initializePlayers($request->request->all('players'));
-        $deck = $this->initializeDeck();
-        $bank = $this->initializeBank($deck, $players);
+        $playerData = $request->request->all('players');
+        $players = [];
+        foreach ($playerData as $data) {
+            $players[] = new Player($data['name'], (int)$data['balance']);
+        }
+
+        $deck = new DeckOfCards();
+        $deck->shuffle();
+
+        $bank = new Player('Bank');
+
+        foreach ($players as $player) {
+            $this->addCardToPlayer($player, $deck);
+            $this->addCardToPlayer($player, $deck);
+
+            if ($player->hasBlackJack()) {
+                $player->adjustBalance($player->getBalance() * 1.5);
+                $player->setStatus('done');
+            }
+        }
+
+        $this->addCardToPlayer($bank, $deck);
+        $this->addCardToPlayer($bank, $deck);
 
         $session->set('deck', $deck);
         $session->set('players', $players);
@@ -69,7 +89,13 @@ class BlackJackGame extends AbstractController
             throw new LogicException('Invalid player index.');
         }
 
-        $this->processPlayerHit($player, $deck, $bank);
+        $this->addCardToPlayer($player, $deck);
+
+        if ($player->isBusted()) {
+            $bank->adjustBalance($player->getBalance());
+            $player->adjustBalance(-$player->getBalance());
+            $player->setStatus('done');
+        }
 
         $session->set('deck', $deck);
         $session->set('players', $players);
@@ -85,13 +111,17 @@ class BlackJackGame extends AbstractController
         ]);
     }
 
+
     #[Route("/stay/{playerIndex}", name: "game_stay")]
     public function stay(int $playerIndex, SessionInterface $session): Response
     {
         $players = $session->get('players');
         $bank = $session->get('bank');
 
-        $players[$playerIndex]->setStatus('done');
+
+        $player = $players[$playerIndex];
+        $player->setStatus('done');
+
         $session->set('players', $players);
 
         if ($this->areAllPlayersDone($players)) {
@@ -111,69 +141,6 @@ class BlackJackGame extends AbstractController
         $players = $session->get('players');
         $bank = $session->get('bank');
 
-        $this->processDealerTurn($bank, $deck, $players);
-
-        $session->set('deck', $deck);
-        $session->set('players', $players);
-        $session->set('bank', $bank);
-        $this->addFlash('success', 'The Round is over!!');
-
-        return $this->render('black-jack/home.html.twig', [
-            'players' => $players,
-            'bank' => $bank
-        ]);
-    }
-
-    private function initializePlayers(array $playerData): array
-    {
-        $players = [];
-        foreach ($playerData as $data) {
-            $players[] = new Player($data['name'], (int)$data['balance']);
-        }
-        return $players;
-    }
-
-    private function initializeDeck(): DeckOfCards
-    {
-        $deck = new DeckOfCards();
-        $deck->shuffle();
-        return $deck;
-    }
-
-    private function initializeBank(DeckOfCards $deck, array &$players): Player
-    {
-        $bank = new Player('Bank');
-        foreach ($players as $player) {
-            $this->dealInitialCards($player, $deck);
-        }
-        $this->dealInitialCards($bank, $deck);
-        return $bank;
-    }
-
-    private function dealInitialCards(Player $player, DeckOfCards $deck): void
-    {
-        $this->addCardToPlayer($player, $deck);
-        $this->addCardToPlayer($player, $deck);
-
-        if ($player->hasBlackJack()) {
-            $player->adjustBalance($player->getBalance() * 1.5);
-            $player->setStatus('done');
-        }
-    }
-
-    private function processPlayerHit(Player $player, DeckOfCards $deck, Player $bank): void
-    {
-        $this->addCardToPlayer($player, $deck);
-
-        if ($player->isBusted()) {
-            $bank->adjustBalance($player->getBalance());
-            $player->adjustBalance(-$player->getBalance());
-            $player->setStatus('done');
-        }
-    }
-
-    private function processDealerTurn(Player $bank, DeckOfCards $deck, array $players): void
-    {
         while ($bank->getHandValue() < 17) {
             $this->addCardToPlayer($bank, $deck);
         }
@@ -196,6 +163,16 @@ class BlackJackGame extends AbstractController
                 }
             }
         }
+
+        $session->set('deck', $deck);
+        $session->set('players', $players);
+        $session->set('bank', $bank);
+        $this->addFlash('success', 'The Round is over!!');
+
+        return $this->render('black-jack/home.html.twig', [
+            'players' => $players,
+            'bank' => $bank
+        ]);
     }
 
     /**
@@ -219,4 +196,5 @@ class BlackJackGame extends AbstractController
         }
         $player->addCard($card);
     }
+
 }

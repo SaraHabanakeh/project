@@ -7,7 +7,7 @@ use App\Card\CardGraphic;
 
 /**
  * Class DeckOfCards
- * 
+ *
  * Represents a deck of playing cards.
  */
 class DeckOfCards
@@ -33,7 +33,7 @@ class DeckOfCards
 
     /**
      * Get all the cards in the deck.
-     * 
+     *
      * @return Card[] An array of Card objects representing the cards in the deck.
      */
     public function getCards(): array
@@ -43,7 +43,7 @@ class DeckOfCards
 
     /**
      * Get the sorted representation of the cards in the deck.
-     * 
+     *
      * @return array<string, array<int, string>> An array representing the sorted cards.
      */
     public function getSortedCards(): array
@@ -65,7 +65,7 @@ class DeckOfCards
 
     /**
      * Shuffle the cards in the deck.
-     * 
+     *
      * @return void
      */
     public function shuffle(): void
@@ -75,7 +75,7 @@ class DeckOfCards
 
     /**
      * Draw a card from the top of the deck.
-     * 
+     *
      * @return Card|null The card drawn, or null if the deck is empty.
      */
     public function drawCard(): ?Card
@@ -85,7 +85,7 @@ class DeckOfCards
 
     /**
      * Get the number of cards remaining in the deck.
-     * 
+     *
      * @return int The number of cards remaining in the deck.
      */
     public function countCards(): int

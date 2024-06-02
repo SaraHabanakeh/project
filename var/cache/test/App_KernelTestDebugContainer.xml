@@ -361,13 +361,6 @@
         <argument type="service" id=".service_locator.jUv.zyj.App\Controller\CardGameController"/>
       </call>
     </service>
-    <service id="App\Controller\DiceGameController" class="App\Controller\DiceGameController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.jUv.zyj.App\Controller\DiceGameController"/>
-      </call>
-    </service>
     <service id="App\Controller\PresentationController" class="App\Controller\PresentationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -375,21 +368,10 @@
         <argument type="service" id=".service_locator.jUv.zyj.App\Controller\PresentationController"/>
       </call>
     </service>
-    <service id="App\Controller\ProductController" class="App\Controller\ProductController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.jUv.zyj.App\Controller\ProductController"/>
-      </call>
+    <service id="App\Form\BookType" class="App\Form\BookType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
-    <service id="App\Dice\Dice" class="App\Dice\Dice" autowire="true" autoconfigure="true"/>
-    <service id="App\Dice\DiceGraphic" class="App\Dice\DiceGraphic" autowire="true" autoconfigure="true"/>
-    <service id="App\Dice\DiceHand" class="App\Dice\DiceHand" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
-    <service id="App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -420,7 +402,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.vY_H31s"/>
+      <argument type="service" id=".service_locator.1kKMm9P"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1323,9 +1305,11 @@
       <argument type="service" id="form.registry"/>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
+        <argument>App\Form</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\BookType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1651,11 +1635,8 @@
         <argument key="App\Card\CoinGraphic" type="service_closure" id="App\Card\CoinGraphic" on-invalid="ignore_uninitialized"/>
         <argument key="App\Card\DeckOfCards" type="service_closure" id="App\Card\DeckOfCards" on-invalid="ignore_uninitialized"/>
         <argument key="App\Controller\ApiController" type="service_closure" id="App\Controller\ApiController" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Dice\Dice" type="service_closure" id="App\Dice\Dice" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Dice\DiceGraphic" type="service_closure" id="App\Dice\DiceGraphic" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Dice\DiceHand" type="service_closure" id="App\Dice\DiceHand" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Form\BookType" type="service_closure" id="App\Form\BookType" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
-        <argument key="App\Repository\ProductRepository" type="service_closure" id="App\Repository\ProductRepository" on-invalid="ignore_uninitialized"/>
         <argument key="Doctrine\Bundle\DoctrineBundle\Dbal\ManagerRegistryAwareConnectionProvider" type="service_closure" id="Doctrine\Bundle\DoctrineBundle\Dbal\ManagerRegistryAwareConnectionProvider" on-invalid="ignore_uninitialized"/>
         <argument key="Doctrine\Common\Persistence\ManagerRegistry" type="service_closure" id="doctrine" on-invalid="ignore_uninitialized"/>
         <argument key="Doctrine\DBAL\Connection" type="service_closure" id="doctrine.dbal.default_connection" on-invalid="ignore_uninitialized"/>
@@ -1775,7 +1756,7 @@
         <argument key="argument_metadata_factory" type="service_closure" id="argument_metadata_factory" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver" type="service_closure" id="debug.argument_resolver" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.backed_enum_resolver" type="service_closure" id="argument_resolver.backed_enum_resolver" on-invalid="ignore_uninitialized"/>
-        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.vY_H31s" on-invalid="ignore_uninitialized"/>
+        <argument key="argument_resolver.controller_locator" type="service_closure" id=".service_locator.1kKMm9P" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.datetime" type="service_closure" id="argument_resolver.datetime" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.default" type="service_closure" id="argument_resolver.default" on-invalid="ignore_uninitialized"/>
         <argument key="argument_resolver.not_tagged_controller" type="service_closure" id="argument_resolver.not_tagged_controller" on-invalid="ignore_uninitialized"/>
@@ -4109,7 +4090,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.vY_H31s"/>
+      <argument type="service" id=".service_locator.1kKMm9P"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4610,7 +4591,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.Za9MpXe"/>
+      <argument type="service" id=".service_locator..uRNW6E"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5848,7 +5829,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.wuK.q11"/>
+      <argument type="service" id=".service_locator.kjkXYMe"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7551,19 +7532,13 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CardGameController" class="App\Controller\CardGameController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CardGameController" class="App\Controller\CardGameController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\CardGameController" class="App\Controller\CardGameController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DiceGameController" class="App\Controller\DiceGameController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DiceGameController" class="App\Controller\DiceGameController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\DiceGameController" class="App\Controller\DiceGameController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PresentationController" class="App\Controller\PresentationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PresentationController" class="App\Controller\PresentationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PresentationController" class="App\Controller\PresentationController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProductController" class="App\Controller\ProductController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProductController" class="App\Controller\ProductController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ProductController" class="App\Controller\ProductController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BookType" class="App\Form\BookType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\BookType" class="App\Form\BookType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.bJ.4HC5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7595,16 +7570,16 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.o6sN0hZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="doctrine" type="service_closure" id="doctrine"/>
-      </argument>
-    </service>
     <service id=".service_locator.E86grY4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="bookRepository" type="service_closure" id="App\Repository\BookRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.o6sN0hZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service_closure" id="doctrine"/>
       </argument>
     </service>
     <service id=".service_locator.czJQNbs" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -7614,47 +7589,27 @@
         <argument key="doctrine" type="service_closure" id="doctrine"/>
       </argument>
     </service>
-    <service id=".service_locator.DZowHzb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1kKMm9P" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.vY_H31s" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="App\Controller\BookController::book" type="service_closure" id=".service_locator.o6sN0hZ"/>
+        <argument key="App\Controller\BookController::apiIndex" type="service_closure" id=".service_locator.E86grY4"/>
+        <argument key="App\Controller\BookController::apiShow" type="service_closure" id=".service_locator.E86grY4"/>
+        <argument key="App\Controller\BookController::create" type="service_closure" id=".service_locator.o6sN0hZ"/>
         <argument key="App\Controller\BookController::delete" type="service_closure" id=".service_locator.czJQNbs"/>
         <argument key="App\Controller\BookController::edit" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\BookController::new" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\BookController::showAllBook" type="service_closure" id=".service_locator.E86grY4"/>
-        <argument key="App\Controller\BookController::showBook" type="service_closure" id=".service_locator.E86grY4"/>
-        <argument key="App\Controller\BookController::showBookByIsbn" type="service_closure" id=".service_locator.E86grY4"/>
-        <argument key="App\Controller\ProductController::createProduct" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\ProductController::showAllProduct" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController::showProductById" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController::showProductByMinimumValue" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController::updateProduct" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\ProductController::viewAllProduct" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController::viewProductWithMinimumValue" type="service_closure" id=".service_locator.DZowHzb"/>
+        <argument key="App\Controller\BookController::index" type="service_closure" id=".service_locator.E86grY4"/>
+        <argument key="App\Controller\BookController::show" type="service_closure" id=".service_locator.E86grY4"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
-        <argument key="App\Controller\BookController:book" type="service_closure" id=".service_locator.o6sN0hZ"/>
+        <argument key="App\Controller\BookController:apiIndex" type="service_closure" id=".service_locator.E86grY4"/>
+        <argument key="App\Controller\BookController:apiShow" type="service_closure" id=".service_locator.E86grY4"/>
+        <argument key="App\Controller\BookController:create" type="service_closure" id=".service_locator.o6sN0hZ"/>
         <argument key="App\Controller\BookController:delete" type="service_closure" id=".service_locator.czJQNbs"/>
         <argument key="App\Controller\BookController:edit" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\BookController:new" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\BookController:showAllBook" type="service_closure" id=".service_locator.E86grY4"/>
-        <argument key="App\Controller\BookController:showBook" type="service_closure" id=".service_locator.E86grY4"/>
-        <argument key="App\Controller\BookController:showBookByIsbn" type="service_closure" id=".service_locator.E86grY4"/>
-        <argument key="App\Controller\ProductController:createProduct" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\ProductController:showAllProduct" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController:showProductById" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController:showProductByMinimumValue" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController:updateProduct" type="service_closure" id=".service_locator.o6sN0hZ"/>
-        <argument key="App\Controller\ProductController:viewAllProduct" type="service_closure" id=".service_locator.DZowHzb"/>
-        <argument key="App\Controller\ProductController:viewProductWithMinimumValue" type="service_closure" id=".service_locator.DZowHzb"/>
+        <argument key="App\Controller\BookController:index" type="service_closure" id=".service_locator.E86grY4"/>
+        <argument key="App\Controller\BookController:show" type="service_closure" id=".service_locator.E86grY4"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
       </argument>
@@ -7736,9 +7691,10 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Za9MpXe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..uRNW6E" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\BookType" type="service_closure" id="App\Form\BookType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -7864,11 +7820,10 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.wuK.q11" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kjkXYMe" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository"/>
-        <argument key="App\Repository\ProductRepository" type="service_closure" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8152,21 +8107,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jUv.zyj" method="withContext"/>
     </service>
-    <service id=".service_locator.jUv.zyj.App\Controller\DiceGameController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\DiceGameController"/>
-      <argument>App\Controller\DiceGameController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.jUv.zyj" method="withContext"/>
-    </service>
     <service id=".service_locator.jUv.zyj.App\Controller\PresentationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\PresentationController"/>
       <argument>App\Controller\PresentationController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.jUv.zyj" method="withContext"/>
-    </service>
-    <service id=".service_locator.jUv.zyj.App\Controller\ProductController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ProductController"/>
-      <argument>App\Controller\ProductController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jUv.zyj" method="withContext"/>
     </service>
@@ -8344,9 +8287,7 @@
           <argument>App\Controller\BlackJackGame</argument>
           <argument>App\Controller\BookController</argument>
           <argument>App\Controller\CardGameController</argument>
-          <argument>App\Controller\DiceGameController</argument>
           <argument>App\Controller\PresentationController</argument>
-          <argument>App\Controller\ProductController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -9295,7 +9236,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.bJ.4HC5" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.vY_H31s"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.1kKMm9P"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9336,10 +9277,9 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
-    <service id=".service_locator.eQ296SW" alias=".service_locator.o6sN0hZ"/>
     <service id=".service_locator.Zjp7QLN" alias=".service_locator.E86grY4"/>
+    <service id=".service_locator.eQ296SW" alias=".service_locator.o6sN0hZ"/>
     <service id=".service_locator.RSEhW5j" alias=".service_locator.czJQNbs"/>
-    <service id=".service_locator.YAVoKZL" alias=".service_locator.DZowHzb"/>
     <service id=".service_locator.Q1z.f9O" alias=".service_locator.jUv.zyj"/>
   </services>
 </container>

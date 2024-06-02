@@ -316,6 +316,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-BlackJackGame.html#method_dealer"
         },                {
+            "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AinitializePlayers\u0028\u0029",
+            "name": "initializePlayers",
+            "summary": "",
+            "url": "classes/App-Controller-BlackJackGame.html#method_initializePlayers"
+        },                {
+            "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AinitializeDeck\u0028\u0029",
+            "name": "initializeDeck",
+            "summary": "",
+            "url": "classes/App-Controller-BlackJackGame.html#method_initializeDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AinitializeBank\u0028\u0029",
+            "name": "initializeBank",
+            "summary": "",
+            "url": "classes/App-Controller-BlackJackGame.html#method_initializeBank"
+        },                {
+            "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AdealInitialCards\u0028\u0029",
+            "name": "dealInitialCards",
+            "summary": "",
+            "url": "classes/App-Controller-BlackJackGame.html#method_dealInitialCards"
+        },                {
+            "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AprocessPlayerHit\u0028\u0029",
+            "name": "processPlayerHit",
+            "summary": "",
+            "url": "classes/App-Controller-BlackJackGame.html#method_processPlayerHit"
+        },                {
+            "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AprocessDealerTurn\u0028\u0029",
+            "name": "processDealerTurn",
+            "summary": "",
+            "url": "classes/App-Controller-BlackJackGame.html#method_processDealerTurn"
+        },                {
             "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AareAllPlayersDone\u0028\u0029",
             "name": "areAllPlayersDone",
             "summary": "",

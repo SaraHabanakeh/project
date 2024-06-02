@@ -6,7 +6,7 @@ use App\Card\Card;
 
 /**
  * Class CardHand
- * 
+ *
  * Represents a hand of cards in a card game.
  */
 class CardHand
@@ -18,7 +18,7 @@ class CardHand
 
     /**
      * Adds a card to the hand.
-     * 
+     *
      * @param Card $card The card to be added.
      * @return void
      */
@@ -29,7 +29,7 @@ class CardHand
 
     /**
      * Gets all the cards in the hand.
-     * 
+     *
      * @return Card[] An array of cards in the hand.
      */
     public function getCards(): array
@@ -39,7 +39,7 @@ class CardHand
 
     /**
      * Calculates the total value of the cards in the hand.
-     * 
+     *
      * @return int The total value of the cards.
      */
     public function totalValue(): int
