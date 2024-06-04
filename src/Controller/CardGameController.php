@@ -24,6 +24,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/session", name: "session_debug")]
     public function showSession(SessionInterface $session): Response
     {
         return $this->render('card/session.html.twig', [
@@ -41,6 +43,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/session/delete", name: "session_delete")]
     public function deleteSession(SessionInterface $session): Response
     {
         $session->clear();
@@ -55,6 +59,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/card", name: "card_start")]
     public function home(): Response
     {
         return $this->render("card/home.html.twig");
@@ -67,6 +73,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/card/deck", name: "card_deck")]
     public function showDeck(): Response
     {
         $deck = new DeckOfCards();
@@ -84,6 +92,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/card/deck/shuffle", name: "card_shuffle")]
     public function shuffleDeck(SessionInterface $session): Response
     {
         $session->clear();
@@ -103,6 +113,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/card/deck/draw", name:"card_draw")]
     public function drawCard(SessionInterface $session): Response
     {
         $deck = $session->get('deck', new DeckOfCards());
@@ -132,6 +144,8 @@ class CardGameController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route("/card/deck/draw/{num}", name:"card_draw_number")]
     public function drawMultipleCards(SessionInterface $session, int $num): Response
     {
         $deck = $session->get('deck', new DeckOfCards());

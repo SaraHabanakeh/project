@@ -103,12 +103,8 @@ class __TwigTemplate_19e41ca9a473677e5dec209b5e205d89 extends Template
         // line 26
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("code_metrics");
         yield "\">Metrics</a></li>
-                <li class='item-1'><a href=\"";
-        // line 27
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_start");
-        yield "\">Project</a></li>
                  <li class='item-2'><a href=\"";
-        // line 28
+        // line 27
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("api");
         yield "\">API</a></li>
             </ul>
@@ -116,9 +112,9 @@ class __TwigTemplate_19e41ca9a473677e5dec209b5e205d89 extends Template
     </body>
      <main class=\"home\">
         ";
-        // line 33
+        // line 32
         yield from $this->unwrap()->yieldBlock('main', $context, $blocks);
-        // line 34
+        // line 33
         yield "     </main>
     <footer>
 
@@ -226,7 +222,7 @@ class __TwigTemplate_19e41ca9a473677e5dec209b5e205d89 extends Template
         return; yield '';
     }
 
-    // line 33
+    // line 32
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -266,7 +262,7 @@ class __TwigTemplate_19e41ca9a473677e5dec209b5e205d89 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  230 => 33,  210 => 13,  199 => 14,  197 => 13,  192 => 12,  182 => 11,  168 => 8,  158 => 7,  138 => 5,  122 => 34,  120 => 33,  112 => 28,  108 => 27,  104 => 26,  100 => 25,  96 => 24,  92 => 23,  88 => 22,  84 => 21,  80 => 20,  76 => 19,  70 => 15,  68 => 11,  65 => 10,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  226 => 32,  206 => 13,  195 => 14,  193 => 13,  188 => 12,  178 => 11,  164 => 8,  154 => 7,  134 => 5,  118 => 33,  116 => 32,  108 => 27,  104 => 26,  100 => 25,  96 => 24,  92 => 23,  88 => 22,  84 => 21,  80 => 20,  76 => 19,  70 => 15,  68 => 11,  65 => 10,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -297,7 +293,6 @@ class __TwigTemplate_19e41ca9a473677e5dec209b5e205d89 extends Template
                 <li class='item-2'><a href=\"{{ path('game-page') }}\">Game</a></li>
                 <li class='item-3'><a href=\"{{ path('app_book') }}\">Library</a></li>
                 <li class='item-4'><a href=\"{{ path('code_metrics') }}\">Metrics</a></li>
-                <li class='item-1'><a href=\"{{ path('game_start') }}\">Project</a></li>
                  <li class='item-2'><a href=\"{{ path('api') }}\">API</a></li>
             </ul>
         </nav>

@@ -5,11 +5,18 @@ namespace App\Controller;
 use App\Card\DeckOfCards;
 use App\Card\CardHand;
 use App\Card\Player;
+
+
+
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
 use App\Entity\Book;
 use App\Entity\AddBook;
 use App\Repository\BookRepository;
 use Doctrine\Persistence\ManagerRegistry;
+
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,6 +36,7 @@ class ApiController
      * 
      * @return Response
      */
+    #[Route("/api/quote", name: "api-quote")]
     public function getDailyQuote(): Response
     {
         $quotes = [
@@ -56,6 +64,7 @@ class ApiController
      * 
      * @return JsonResponse
      */
+    #[Route("/api/deck", name:"api-deck")]
     public function getDeck(): JsonResponse
     {
         $deck = new DeckOfCards();
@@ -78,6 +87,8 @@ class ApiController
      * 
      * @throws LogicException If JSON encoding fails.
      */
+
+    #[Route("/api/deck/shuffle", name:"api-shuffle", methods: ['POST', 'GET'])]
     public function getShuffleCards(Request $request, SessionInterface $session): Response
     {
         $deck = new DeckOfCards();
@@ -116,6 +127,7 @@ class ApiController
      * 
      * @throws LogicException If session data is corrupted or JSON encoding fails.
      */
+    #[Route("/api/deck/draw/{number}", name: "api_draw_cards", methods: ['POST', 'GET'])]
     public function drawCards(Request $request, SessionInterface $session, int $number): Response
     {
         $deck = $session->get('deck', new DeckOfCards());
@@ -167,6 +179,8 @@ class ApiController
      * 
      * @return JsonResponse
      */
+
+    #[Route("/api/game", name: "api_game")]
     public function apiGame(SessionInterface $session): JsonResponse
     {
         $deck = $session->get('deck');
@@ -199,4 +213,5 @@ class ApiController
 
         return new JsonResponse($data);
     }
+
 }

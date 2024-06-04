@@ -18,9 +18,11 @@ return [
         '/api/deck' => [[['_route' => 'api-deck', '_controller' => 'App\\Controller\\ApiController::getDeck'], null, null, null, false, false, null]],
         '/api/deck/shuffle' => [[['_route' => 'api-shuffle', '_controller' => 'App\\Controller\\ApiController::getShuffleCards'], null, ['POST' => 0, 'GET' => 1], null, false, false, null]],
         '/api/game' => [[['_route' => 'api_game', '_controller' => 'App\\Controller\\ApiController::apiGame'], null, null, null, false, false, null]],
+        '/game/reset' => [[['_route' => 'game_reset', '_controller' => 'App\\Controller\\BlackJackGame::reset'], null, ['POST' => 0], null, false, false, null]],
         '/game' => [[['_route' => 'game-page', '_controller' => 'App\\Controller\\BlackJackGame::home'], null, null, null, true, false, null]],
         '/game/doc' => [[['_route' => 'game-doc', '_controller' => 'App\\Controller\\BlackJackGame::doc'], null, null, null, false, false, null]],
         '/setup' => [[['_route' => 'game_setup', '_controller' => 'App\\Controller\\BlackJackGame::setup'], null, null, null, false, false, null]],
+        '/start' => [[['_route' => 'game_start', '_controller' => 'App\\Controller\\BlackJackGame::start'], null, ['POST' => 0], null, false, false, null]],
         '/dealer' => [[['_route' => 'game_dealer', '_controller' => 'App\\Controller\\BlackJackGame::dealer'], null, null, null, false, false, null]],
         '/library' => [[['_route' => 'app_book', '_controller' => 'App\\Controller\\BookController::index'], null, null, null, true, false, null]],
         '/library/create' => [[['_route' => 'book_new', '_controller' => 'App\\Controller\\BookController::create'], null, null, null, false, false, null]],
@@ -36,16 +38,8 @@ return [
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\PresentationController::report'], null, null, null, false, false, null]],
         '/lucky' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\PresentationController::lucky'], null, null, null, false, false, null]],
         '/metrics' => [[['_route' => 'code_metrics', '_controller' => 'App\\Controller\\PresentationController::metrics'], null, null, null, true, false, null]],
-        '/proj' => [
-            [['_route' => 'project', '_controller' => 'App\\Controller\\PresentationController::proj'], null, null, null, false, false, null],
-            [['_route' => 'game_start', '_controller' => 'App\\Controller\\Project::menu'], null, null, null, false, false, null],
-        ],
+        '/proj' => [[['_route' => 'project', '_controller' => 'App\\Controller\\PresentationController::proj'], null, null, null, false, false, null]],
         '/api' => [[['_route' => 'api', '_controller' => 'App\\Controller\\PresentationController::api'], null, null, null, false, false, null]],
-        '/game/reset' => [[['_route' => 'game_reset', '_controller' => 'App\\Controller\\Project::reset'], null, ['POST' => 0], null, false, false, null]],
-        '/proj/game' => [[['_route' => 'game_proj', '_controller' => 'App\\Controller\\Project::setup'], null, null, null, false, false, null]],
-        '/proj/about' => [[['_route' => 'about_proj', '_controller' => 'App\\Controller\\Project::about'], null, null, null, false, false, null]],
-        '/start/proj' => [[['_route' => 'start_proj', '_controller' => 'App\\Controller\\Project::start'], null, ['POST' => 0], null, false, false, null]],
-        '/dealer/proj' => [[['_route' => 'dealer_proj', '_controller' => 'App\\Controller\\Project::dealer'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -71,14 +65,14 @@ return [
                     .'|deck/draw/([^/]++)(*:228)'
                     .'|library/book/([^/]++)(*:257)'
                 .')'
+                .'|/hit/([^/]++)(*:279)'
+                .'|/stay/([^/]++)(*:301)'
                 .'|/library/(?'
-                    .'|([^/]++)(*:286)'
-                    .'|edit/([^/]++)(*:307)'
-                    .'|delete/([^/]++)(*:330)'
+                    .'|([^/]++)(*:329)'
+                    .'|edit/([^/]++)(*:350)'
+                    .'|delete/([^/]++)(*:373)'
                 .')'
-                .'|/card/deck/draw/([^/]++)(*:363)'
-                .'|/hit/proj/([^/]++)(*:389)'
-                .'|/stay/proj/([^/]++)(*:416)'
+                .'|/card/deck/draw/([^/]++)(*:406)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -92,13 +86,13 @@ return [
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         228 => [[['_route' => 'api_draw_cards', '_controller' => 'App\\Controller\\ApiController::drawCards'], ['number'], ['POST' => 0, 'GET' => 1], null, false, true, null]],
         257 => [[['_route' => 'book_by_isbn', '_controller' => 'App\\Controller\\BookController::apiShow'], ['isbn'], ['GET' => 0], null, false, true, null]],
-        286 => [[['_route' => 'show_book', '_controller' => 'App\\Controller\\BookController::show'], ['title'], null, null, false, true, null]],
-        307 => [[['_route' => 'edit_book', '_controller' => 'App\\Controller\\BookController::edit'], ['title'], null, null, false, true, null]],
-        330 => [[['_route' => 'delete_book', '_controller' => 'App\\Controller\\BookController::delete'], ['title'], null, null, false, true, null]],
-        363 => [[['_route' => 'card_draw_number', '_controller' => 'App\\Controller\\CardGameController::drawMultipleCards'], ['num'], null, null, false, true, null]],
-        389 => [[['_route' => 'game_hit', '_controller' => 'App\\Controller\\Project::hit'], ['playerIndex'], null, null, false, true, null]],
-        416 => [
-            [['_route' => 'game_stay', '_controller' => 'App\\Controller\\Project::stay'], ['playerIndex'], null, null, false, true, null],
+        279 => [[['_route' => 'game_hit', '_controller' => 'App\\Controller\\BlackJackGame::hit'], ['playerIndex'], null, null, false, true, null]],
+        301 => [[['_route' => 'game_stay', '_controller' => 'App\\Controller\\BlackJackGame::stay'], ['playerIndex'], null, null, false, true, null]],
+        329 => [[['_route' => 'show_book', '_controller' => 'App\\Controller\\BookController::show'], ['title'], null, null, false, true, null]],
+        350 => [[['_route' => 'edit_book', '_controller' => 'App\\Controller\\BookController::edit'], ['title'], null, null, false, true, null]],
+        373 => [[['_route' => 'delete_book', '_controller' => 'App\\Controller\\BookController::delete'], ['title'], null, null, false, true, null]],
+        406 => [
+            [['_route' => 'card_draw_number', '_controller' => 'App\\Controller\\CardGameController::drawMultipleCards'], ['num'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

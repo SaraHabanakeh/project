@@ -16,6 +16,7 @@ use LogicException;
 /**
  * Controller for managing a Blackjack game.
  */
+
 class BlackJackGame extends AbstractController
 {
     /**
@@ -27,6 +28,8 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("/game/reset", name: "game_reset", methods: ["POST"])]
     public function reset(SessionInterface $session): Response
     {
         $session->clear();
@@ -40,6 +43,8 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("game/", name: "game-page")]
     public function home(): Response
     {
         return $this->render("black-jack/game.html.twig");
@@ -52,6 +57,8 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("/game/doc", name: "game-doc")]
     public function doc(): Response
     {
         return $this->render("black-jack/doc.html.twig");
@@ -64,13 +71,15 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("/setup", name: "game_setup")]
     public function setup(): Response
     {
         return $this->render('black-jack/form.html.twig');
     }
 
     /**
-     * Start a new game with the given players.
+     * Start the game with the given players.
      *
      * @Route("/start", name="game_start", methods={"POST"})
      *
@@ -79,6 +88,8 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("/start", name: "game_start", methods: ["POST"])]
     public function start(Request $request, SessionInterface $session): Response
     {
         $playerData = $request->request->all('players');
@@ -127,6 +138,8 @@ class BlackJackGame extends AbstractController
      *
      * @throws LogicException If the player index is invalid or the session data is corrupted.
      */
+
+    #[Route("/hit/{playerIndex}", name: "game_hit")]
     public function hit(int $playerIndex, SessionInterface $session): Response
     {
         $deck = $session->get('deck');
@@ -160,6 +173,7 @@ class BlackJackGame extends AbstractController
         ]);
     }
 
+
     /**
      * Handle the 'stay' action for a player.
      *
@@ -170,10 +184,13 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("/stay/{playerIndex}", name: "game_stay")]
     public function stay(int $playerIndex, SessionInterface $session): Response
     {
         $players = $session->get('players');
         $bank = $session->get('bank');
+
 
         $player = $players[$playerIndex];
         $player->setStatus('done');
@@ -199,6 +216,8 @@ class BlackJackGame extends AbstractController
      *
      * @return Response
      */
+
+    #[Route("/dealer", name: "game_dealer")]
     public function dealer(SessionInterface $session): Response
     {
         $deck = $session->get('deck');
@@ -240,11 +259,7 @@ class BlackJackGame extends AbstractController
     }
 
     /**
-     * Check if all players are done with their actions.
-     *
-     * @param Player[] $players The array of players.
-     *
-     * @return bool
+     * @param Player[] $players
      */
     private function areAllPlayersDone(array $players): bool
     {
@@ -257,15 +272,13 @@ class BlackJackGame extends AbstractController
     }
 
     /**
-     * Add a card to a player from the deck.
+     * Check if all players are done with their actions.
      *
-     * @param Player $player The player to add the card to.
-     * @param DeckOfCards $deck The deck of cards.
+     * @param Player[] $players The array of players.
      *
-     * @return void
-     *
-     * @throws LogicException If drawing a card from the deck fails.
+     * @return bool
      */
+
     private function addCardToPlayer(Player $player, DeckOfCards $deck): void
     {
         $card = $deck->drawCard();
@@ -274,4 +287,5 @@ class BlackJackGame extends AbstractController
         }
         $player->addCard($card);
     }
+
 }

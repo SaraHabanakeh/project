@@ -298,7 +298,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003Astart\u0028\u0029",
             "name": "start",
-            "summary": "Start\u0020a\u0020new\u0020game\u0020with\u0020the\u0020given\u0020players.",
+            "summary": "Start\u0020the\u0020game\u0020with\u0020the\u0020given\u0020players.",
             "url": "classes/App-Controller-BlackJackGame.html#method_start"
         },                {
             "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003Ahit\u0028\u0029",
@@ -318,27 +318,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AareAllPlayersDone\u0028\u0029",
             "name": "areAllPlayersDone",
-            "summary": "Check\u0020if\u0020all\u0020players\u0020are\u0020done\u0020with\u0020their\u0020actions.",
+            "summary": "",
             "url": "classes/App-Controller-BlackJackGame.html#method_areAllPlayersDone"
         },                {
             "fqsen": "\\App\\Controller\\BlackJackGame\u003A\u003AaddCardToPlayer\u0028\u0029",
             "name": "addCardToPlayer",
-            "summary": "Add\u0020a\u0020card\u0020to\u0020a\u0020player\u0020from\u0020the\u0020deck.",
+            "summary": "Check\u0020if\u0020all\u0020players\u0020are\u0020done\u0020with\u0020their\u0020actions.",
             "url": "classes/App-Controller-BlackJackGame.html#method_addCardToPlayer"
         },                {
             "fqsen": "\\App\\Controller\\BookController",
             "name": "BookController",
-            "summary": "Controller\u0020for\u0020managing\u0020book\u0020library\u0020actions.",
+            "summary": "Controller\u0020for\u0020managing\u0020card\u0020library\u0020actions.",
             "url": "classes/App-Controller-BookController.html"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003Aindex\u0028\u0029",
             "name": "index",
-            "summary": "Display\u0020the\u0020list\u0020of\u0020books.",
+            "summary": "Display\u0020the\u0020books\u0020that\u0020exist\u0020in\u0020the\u0020data\u0020base\u0020table\u0020book.",
             "url": "classes/App-Controller-BookController.html#method_index"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003Acreate\u0028\u0029",
             "name": "create",
-            "summary": "Create\u0020a\u0020new\u0020book.",
+            "summary": "Create\u0020a\u0020new\u0020book\u0020and\u0020add\u0020it\u0020to\u0020the\u0020database.",
             "url": "classes/App-Controller-BookController.html#method_create"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003Ashow\u0028\u0029",
@@ -358,7 +358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AapiIndex\u0028\u0029",
             "name": "apiIndex",
-            "summary": "Display\u0020a\u0020list\u0020of\u0020books\u0020in\u0020JSON\u0020format\u0020\u0028API\u0029.",
+            "summary": "Display\u0020\u0020books\u0020in\u0020JSON\u0020format\u0020\u0028API\u0029.",
             "url": "classes/App-Controller-BookController.html#method_apiIndex"
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AapiShow\u0028\u0029",
@@ -368,7 +368,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\BookController\u003A\u003AhandleForm\u0028\u0029",
             "name": "handleForm",
-            "summary": "Handle\u0020the\u0020form\u0020submission\u0020for\u0020creating\u0020and\u0020editing\u0020books.",
+            "summary": "",
             "url": "classes/App-Controller-BookController.html#method_handleForm"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController",

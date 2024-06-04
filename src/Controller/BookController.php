@@ -11,13 +11,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 /**
- * Controller for managing book library actions.
+ * Controller for managing card library actions.
  */
 class BookController extends AbstractController
 {
     /**
-     * Display the list of books.
+     * Display the books that exist in the data base table book.
      *
      * @Route('library/', name='app_book')
      * 
@@ -25,6 +26,7 @@ class BookController extends AbstractController
      * 
      * @return Response
      */
+    #[Route('library/', name: 'app_book')]
     public function index(BookRepository $bookRepository): Response
     {
         $books = $bookRepository->findAll();
@@ -35,7 +37,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * Create a new book.
+     * Create a new book and add it to the database.
      *
      * @Route('/library/create', name='book_new')
      * 
@@ -44,6 +46,7 @@ class BookController extends AbstractController
      * 
      * @return Response
      */
+    #[Route('/library/create', name: 'book_new')]
     public function create(Request $request, ManagerRegistry $doctrine): Response
     {
         $book = new Book();
@@ -62,6 +65,8 @@ class BookController extends AbstractController
      * 
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException If the book is not found.
      */
+
+    #[Route('/library/{title}', name: 'show_book')]
     public function show(BookRepository $bookRepository, string $title): Response
     {
         $book = $bookRepository->findOneBy(['title' => $title]);
@@ -86,6 +91,7 @@ class BookController extends AbstractController
      * 
      * @return Response
      */
+    #[Route('/library/edit/{title}', name: 'edit_book')]
     public function edit(Request $request, ManagerRegistry $doctrine, string $title): Response
     {
         $bookRepository = $doctrine->getRepository(Book::class);
@@ -104,6 +110,8 @@ class BookController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route('/library/delete/{title}', name: 'delete_book')]
     public function delete(BookRepository $bookRepository, ManagerRegistry $doctrine, string $title): Response
     {
         $book = $bookRepository->findOneBy(['title' => $title]);
@@ -115,7 +123,7 @@ class BookController extends AbstractController
     }
 
     /**
-     * Display a list of books in JSON format (API).
+     * Display  books in JSON format (API).
      *
      * @Route('/api/library/books', name='show_books')
      * 
@@ -123,6 +131,8 @@ class BookController extends AbstractController
      * 
      * @return Response
      */
+
+    #[Route('/api/library/books', name: 'show_books')]
     public function apiIndex(BookRepository $bookRepository): Response
     {
         $books = $bookRepository->findAll();
@@ -130,7 +140,7 @@ class BookController extends AbstractController
         return $this->json($books, Response::HTTP_OK, [], ['json_encode_options' => JSON_PRETTY_PRINT]);
     }
 
-    /**
+     /**
      * Display a single book by its ISBN in JSON format (API).
      *
      * @Route('api/library/book/{isbn}', name='book_by_isbn', methods={'GET'})
@@ -142,6 +152,8 @@ class BookController extends AbstractController
      * 
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException If the book is not found.
      */
+
+    #[Route('api/library/book/{isbn}', name: 'book_by_isbn', methods: ['GET'])]
     public function apiShow(BookRepository $bookRepository, int $isbn): Response
     {
         $book = $bookRepository->findOneBy(['isbn' => $isbn]);
@@ -153,16 +165,6 @@ class BookController extends AbstractController
         return $this->json($book);
     }
 
-    /**
-     * Handle the form submission for creating and editing books.
-     *
-     * @param Request $request The HTTP request object.
-     * @param ManagerRegistry $doctrine The doctrine manager registry.
-     * @param Book $book The book entity.
-     * @param string $template The template to render.
-     * 
-     * @return Response
-     */
     private function handleForm(Request $request, ManagerRegistry $doctrine, Book $book, string $template): Response
     {
         $form = $this->createForm(BookType::class, $book);
