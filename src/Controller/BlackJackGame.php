@@ -13,34 +13,72 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use LogicException;
 
+/**
+ * Controller for managing a Blackjack game.
+ */
 class BlackJackGame extends AbstractController
 {
-    #[Route("/game/reset", name: "game_reset", methods: ["POST"])]
+    /**
+     * Reset the game by clearing the session.
+     *
+     * @Route("/game/reset", name="game_reset", methods={"POST"})
+     *
+     * @param SessionInterface $session The session interface.
+     *
+     * @return Response
+     */
     public function reset(SessionInterface $session): Response
     {
         $session->clear();
         return $this->redirectToRoute("game_setup");
     }
 
-    #[Route("game/", name: "game-page")]
+    /**
+     * Render the main game page.
+     *
+     * @Route("game/", name="game-page")
+     *
+     * @return Response
+     */
     public function home(): Response
     {
         return $this->render("black-jack/game.html.twig");
     }
 
-    #[Route("/game/doc", name: "game-doc")]
+    /**
+     * Render the game documentation page.
+     *
+     * @Route("/game/doc", name="game-doc")
+     *
+     * @return Response
+     */
     public function doc(): Response
     {
         return $this->render("black-jack/doc.html.twig");
     }
 
-    #[Route("/setup", name: "game_setup")]
+    /**
+     * Render the setup form for starting the game.
+     *
+     * @Route("/setup", name="game_setup")
+     *
+     * @return Response
+     */
     public function setup(): Response
     {
         return $this->render('black-jack/form.html.twig');
     }
 
-    #[Route("/start", name: "game_start", methods: ["POST"])]
+    /**
+     * Start a new game with the given players.
+     *
+     * @Route("/start", name="game_start", methods={"POST"})
+     *
+     * @param Request $request The HTTP request object.
+     * @param SessionInterface $session The session interface.
+     *
+     * @return Response
+     */
     public function start(Request $request, SessionInterface $session): Response
     {
         $playerData = $request->request->all('players');
@@ -77,7 +115,18 @@ class BlackJackGame extends AbstractController
         ]);
     }
 
-    #[Route("/hit/{playerIndex}", name: "game_hit")]
+    /**
+     * Handle the 'hit' action for a player.
+     *
+     * @Route("/hit/{playerIndex}", name="game_hit")
+     *
+     * @param int $playerIndex The index of the player in the session.
+     * @param SessionInterface $session The session interface.
+     *
+     * @return Response
+     *
+     * @throws LogicException If the player index is invalid or the session data is corrupted.
+     */
     public function hit(int $playerIndex, SessionInterface $session): Response
     {
         $deck = $session->get('deck');
@@ -111,13 +160,20 @@ class BlackJackGame extends AbstractController
         ]);
     }
 
-
-    #[Route("/stay/{playerIndex}", name: "game_stay")]
+    /**
+     * Handle the 'stay' action for a player.
+     *
+     * @Route("/stay/{playerIndex}", name="game_stay")
+     *
+     * @param int $playerIndex The index of the player in the session.
+     * @param SessionInterface $session The session interface.
+     *
+     * @return Response
+     */
     public function stay(int $playerIndex, SessionInterface $session): Response
     {
         $players = $session->get('players');
         $bank = $session->get('bank');
-
 
         $player = $players[$playerIndex];
         $player->setStatus('done');
@@ -134,7 +190,15 @@ class BlackJackGame extends AbstractController
         ]);
     }
 
-    #[Route("/dealer", name: "game_dealer")]
+    /**
+     * Handle the dealer's actions and determine the outcome of the game.
+     *
+     * @Route("/dealer", name="game_dealer")
+     *
+     * @param SessionInterface $session The session interface.
+     *
+     * @return Response
+     */
     public function dealer(SessionInterface $session): Response
     {
         $deck = $session->get('deck');
@@ -176,7 +240,11 @@ class BlackJackGame extends AbstractController
     }
 
     /**
-     * @param Player[] $players
+     * Check if all players are done with their actions.
+     *
+     * @param Player[] $players The array of players.
+     *
+     * @return bool
      */
     private function areAllPlayersDone(array $players): bool
     {
@@ -188,6 +256,16 @@ class BlackJackGame extends AbstractController
         return true;
     }
 
+    /**
+     * Add a card to a player from the deck.
+     *
+     * @param Player $player The player to add the card to.
+     * @param DeckOfCards $deck The deck of cards.
+     *
+     * @return void
+     *
+     * @throws LogicException If drawing a card from the deck fails.
+     */
     private function addCardToPlayer(Player $player, DeckOfCards $deck): void
     {
         $card = $deck->drawCard();
@@ -196,5 +274,4 @@ class BlackJackGame extends AbstractController
         }
         $player->addCard($card);
     }
-
 }

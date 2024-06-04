@@ -115,7 +115,7 @@ class __TwigTemplate_cedbdb798db227d1ad05438dbe4e8835 extends Template
         yield "\"><strong>api/library/books:</strong></a><p>Show all the books in the library.</p>
 <a href=\"";
         // line 14
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("book_by_isbn", ["isbn" => 34567]);
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("book_by_isbn", ["isbn" => 67890]);
         yield "\"><strong>api/library/book/{isbn}:</strong></a><p>Find a book by its Isbn.</p>
 
 ";
@@ -167,7 +167,7 @@ class __TwigTemplate_cedbdb798db227d1ad05438dbe4e8835 extends Template
 <a href=\"{{ path('api_draw_cards', { 'number': 0 }) }}\"><strong>api/deck/draw/{number}:</strong></a><p>Draw card/cards from the deck.</p>
 <a href=\"{{ path('api_game') }}\"><strong>api/game:</strong></a><p>Displays game status</p>
 <a href=\"{{ path('show_books') }}\"><strong>api/library/books:</strong></a><p>Show all the books in the library.</p>
-<a href=\"{{ path('book_by_isbn', {'isbn':34567}) }}\"><strong>api/library/book/{isbn}:</strong></a><p>Find a book by its Isbn.</p>
+<a href=\"{{ path('book_by_isbn', {'isbn':67890}) }}\"><strong>api/library/book/{isbn}:</strong></a><p>Find a book by its Isbn.</p>
 
 {% endblock %}
 ", "home/api.html.twig", "/Users/sarahabanakeh/dbwebb-kurser/mvc/me/report/templates/home/api.html.twig");

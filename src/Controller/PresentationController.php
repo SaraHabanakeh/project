@@ -44,6 +44,12 @@ class PresentationController extends AbstractController
         return $this->render('home/metrics.html.twig');
     }
 
+    #[Route('/proj', name:'project')]
+    public function proj(): Response
+    {
+        return $this->render('project/proj.html.twig');
+    }
+
     #[Route('/api', name:'api')]
     public function api(): Response
     {

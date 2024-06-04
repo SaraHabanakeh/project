@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome to the Project!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/logo.JPG') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+
+    </head>
+    <body class="body_proj">
+
+    </body>
+            <nav class= "nav_proj">
+            <ul>
+                <li class='li_proj'><a href="{{ path('game_proj') }}">Game</a></li>
+                <li class='li_proj'><a href="{{ path('about_proj') }}">About</a></li>
+            </ul>
+        </nav>
+     <main class="main_proj">
+        {% block main %}{% endblock %}
+     </main>
+    <footer>
+    </footer>
+</html>
