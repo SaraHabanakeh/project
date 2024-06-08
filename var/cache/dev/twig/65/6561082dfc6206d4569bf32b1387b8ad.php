@@ -170,28 +170,34 @@ Man kan förbättra koden genom Att refaktorisera BookController-klassen för at
 <h4>Minska Cyklomatisk Komplexitet:</h4><p> Hög cyklomatisk komplexitet gör koden svår att förstå och underhålla. jag kommer att bryta ner komplexa funktioner i mindre, med mer hanterbara delar kan vi minska denna komplexitet.</p>
 
 
-<p>Efter att ha implementerat förbättringarna, utökat enhetstesterna, lagt till dockblock till klasserna och brutit ner koden till mindre funktioner i Book controllen, har jag lyckats öka kodtäckningen till 51%. Scrutinizer Code Quality har dock bara ökat något till 5.6, vilket innebär att jag inte lyckades göra en stor förändring i komplexitet. Tidigare var kodtäckningen 17% och Scrutinizer Code Quality 5.5. Förbättringsåtgärderna inkluderade att öka omfattande tester för koden. Jag lade också till dockblock-kommentarer till alla klasser och metoder för att förbättra läsbarheten och underlätta förståelsen av koden. Vidare refaktorerade jag stora metoder genom att dela upp dem i mindre, mer hanterbara funktioner, vilket minskade komplexiteten och förbättrade läsbarheten. Trots dessa förbättringar var det svårt att göra en dramatisk förändring i komplexitetspoängen, vilket kan bero på att den grundläggande strukturen i applikationen fortfarande innehåller vissa komplexa beroenden eller designmönster som behöver en mer djupgående refaktorisering.</p>
+<p>Efter att ha implementerat flera förbättringar och utökat enhetstesterna i koden, har jag lyckats öka kodtäckningen från 17% till 50%. Detta innebär att hälften av koden nu är testad och fri från buggar.
+
+Genom att lägga till docblock-kommentarer till klasserna har jag märkt, via PHP Metrics, att underhållbarheten har ökat. Till exempel ökade underhållbarhetsindexet i BookController från 64,33 till 87,68. Genom att bryta ner koden i mindre funktioner i BookController har underhållbarheten förbättrats markant. I BlackJackGameController ökade underhållbarhetsindexet från 50 till 71,53.
+
+Det som jag fann mest utmanande var att minska kodens komplexitet. Trots mina försök att bryta ner metoderna för att minska komplexiteten, lyckades jag endast minska komplexitetsvärdet i BookController från 6 till 5. Trots dessa förbättringar var det svårt att göra en dramatisk förändring i komplexitetspoängen. Detta kan bero på att den grundläggande strukturen i applikationen fortfarande innehåller vissa komplexa beroenden eller designmönster som kräver en mer djupgående refaktorisering.
+
+Tidigare var Scrutinizer Code Quality-poängen 5,5 och nu har den ökat till 5,6. Sammanfattningsvis har kodtäckningen ökat till 50% och underhållbarheten har förbättrats avsevärt, även om det fortfarande finns utmaningar kvar när det gäller att minska komplexiteten.</p>
 <ul>
     <li>
-        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/kmom06/\">
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/\">
             <img src=\"";
-        // line 84
+        // line 90
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/quality3.png"), "html", null, true);
         yield "\" alt=\"Code Quality\" class=\"img5\">
         </a>
     </li>
     <li>
-        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/kmom06/\">
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/\">
             <img src=\"";
-        // line 89
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/coverage3.png"), "html", null, true);
+        // line 95
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/coverage4.png"), "html", null, true);
         yield "\" alt=\"Code Coverage\" class=\"img5\">
         </a>
     </li>
     <li>
-        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/kmom06/\" >
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/\" >
             <img src=\"";
-        // line 94
+        // line 100
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/build2.png"), "html", null, true);
         yield "\" alt=\"Build Status\" class=\"img5\">
         </a>
@@ -234,7 +240,7 @@ En nackdel kan vara den tidskrävande naturen av att följa reglerna för att up
      */
     public function getDebugInfo()
     {
-        return array (  195 => 94,  187 => 89,  179 => 84,  160 => 68,  152 => 63,  144 => 58,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  201 => 100,  193 => 95,  185 => 90,  160 => 68,  152 => 63,  144 => 58,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -318,20 +324,26 @@ Man kan förbättra koden genom Att refaktorisera BookController-klassen för at
 <h4>Minska Cyklomatisk Komplexitet:</h4><p> Hög cyklomatisk komplexitet gör koden svår att förstå och underhålla. jag kommer att bryta ner komplexa funktioner i mindre, med mer hanterbara delar kan vi minska denna komplexitet.</p>
 
 
-<p>Efter att ha implementerat förbättringarna, utökat enhetstesterna, lagt till dockblock till klasserna och brutit ner koden till mindre funktioner i Book controllen, har jag lyckats öka kodtäckningen till 51%. Scrutinizer Code Quality har dock bara ökat något till 5.6, vilket innebär att jag inte lyckades göra en stor förändring i komplexitet. Tidigare var kodtäckningen 17% och Scrutinizer Code Quality 5.5. Förbättringsåtgärderna inkluderade att öka omfattande tester för koden. Jag lade också till dockblock-kommentarer till alla klasser och metoder för att förbättra läsbarheten och underlätta förståelsen av koden. Vidare refaktorerade jag stora metoder genom att dela upp dem i mindre, mer hanterbara funktioner, vilket minskade komplexiteten och förbättrade läsbarheten. Trots dessa förbättringar var det svårt att göra en dramatisk förändring i komplexitetspoängen, vilket kan bero på att den grundläggande strukturen i applikationen fortfarande innehåller vissa komplexa beroenden eller designmönster som behöver en mer djupgående refaktorisering.</p>
+<p>Efter att ha implementerat flera förbättringar och utökat enhetstesterna i koden, har jag lyckats öka kodtäckningen från 17% till 50%. Detta innebär att hälften av koden nu är testad och fri från buggar.
+
+Genom att lägga till docblock-kommentarer till klasserna har jag märkt, via PHP Metrics, att underhållbarheten har ökat. Till exempel ökade underhållbarhetsindexet i BookController från 64,33 till 87,68. Genom att bryta ner koden i mindre funktioner i BookController har underhållbarheten förbättrats markant. I BlackJackGameController ökade underhållbarhetsindexet från 50 till 71,53.
+
+Det som jag fann mest utmanande var att minska kodens komplexitet. Trots mina försök att bryta ner metoderna för att minska komplexiteten, lyckades jag endast minska komplexitetsvärdet i BookController från 6 till 5. Trots dessa förbättringar var det svårt att göra en dramatisk förändring i komplexitetspoängen. Detta kan bero på att den grundläggande strukturen i applikationen fortfarande innehåller vissa komplexa beroenden eller designmönster som kräver en mer djupgående refaktorisering.
+
+Tidigare var Scrutinizer Code Quality-poängen 5,5 och nu har den ökat till 5,6. Sammanfattningsvis har kodtäckningen ökat till 50% och underhållbarheten har förbättrats avsevärt, även om det fortfarande finns utmaningar kvar när det gäller att minska komplexiteten.</p>
 <ul>
     <li>
-        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/kmom06/\">
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/\">
             <img src=\"{{ asset('img/quality3.png') }}\" alt=\"Code Quality\" class=\"img5\">
         </a>
     </li>
     <li>
-        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/kmom06/\">
-            <img src=\"{{ asset('img/coverage3.png') }}\" alt=\"Code Coverage\" class=\"img5\">
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/\">
+            <img src=\"{{ asset('img/coverage4.png') }}\" alt=\"Code Coverage\" class=\"img5\">
         </a>
     </li>
     <li>
-        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/kmom06/\" >
+        <a href=\"https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/\" >
             <img src=\"{{ asset('img/build2.png') }}\" alt=\"Build Status\" class=\"img5\">
         </a>
     </li>

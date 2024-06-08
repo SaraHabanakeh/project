@@ -179,11 +179,11 @@ class BlackJackGame extends AbstractController
      *
      * @Route("/stay/{playerIndex}", name="game_stay")
      *
-     * @param int $playerIndex The index of the player in the session.
      * @param SessionInterface $session The session interface.
      *
      * @return Response
      */
+
 
     #[Route("/stay/{playerIndex}", name: "game_stay")]
     public function stay(int $playerIndex, SessionInterface $session): Response
@@ -274,9 +274,8 @@ class BlackJackGame extends AbstractController
     /**
      * Check if all players are done with their actions.
      *
-     * @param Player[] $players The array of players.
      *
-     * @return bool
+     * @return void.
      */
 
     private function addCardToPlayer(Player $player, DeckOfCards $deck): void

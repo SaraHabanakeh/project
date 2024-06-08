@@ -1,0 +1,12 @@
+{# templates/project/start.html.twig #}
+
+{% extends 'base7.html.twig' %}
+
+{% block title %}Start Page{% endblock %}
+
+{% block main %}
+    <img src="{{ asset('img/logo.JPG') }}" alt="Black jack game" class="img_proj">
+<form action="{{ path('proj_players') }}" method="post">
+    <button  class ="button_proj" type="submit">Start Game</button>
+</form>
+{% endblock %}

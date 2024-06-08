@@ -3,6 +3,7 @@
 namespace App\Card;
 
 use App\Card\Card;
+use App\Card\CardGraphic;
 
 /**
  * Class CardHand
@@ -56,10 +57,30 @@ class CardHand
         }
 
         while ($aces > 0 && $value <= 11) {
-            $value += 10; // Adjust ace value to 11
+            $value += 10;
             $aces -= 1;
         }
 
         return $value;
     }
+
+    /**
+     * Converts the hand of cards to an array representation.
+     *
+     * @return array<int, array{suit: string, value: int, string_representation: string}> Array of cards with their properties.
+     */
+    public function toArray(): array
+    {
+        $cardsArray = [];
+        foreach ($this->cards as $card) {
+            $cardsArray[] = [
+                'suit' => $card->getSuit(),
+                'value' => $card->getValue(),
+                'string_representation' => $card->getAsString()
+            ];
+        }
+
+        return $cardsArray;
+    }
+
 }

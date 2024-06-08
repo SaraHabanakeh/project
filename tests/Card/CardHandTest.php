@@ -67,4 +67,34 @@ class CardHandTest extends TestCase
         $totalValue = $hand->totalValue();
         $this->assertEquals(15, $totalValue);
     }
+
+    public function testToArray(): void
+    {
+
+        $card1 = new CardGraphic('heart', 12); // Queen of hearts
+        $card2 = new CardGraphic('clover', 10); // 10 of clovers
+
+        $hand = new CardHand();
+        $hand->addCard($card1);
+        $hand->addCard($card2);
+
+
+        $result = $hand->toArray();
+
+
+        $expected = [
+            [
+                'suit' => 'heart',
+                'value' => 12,
+                'string_representation' => '🂽' // Emoji representation for Queen of hearts
+            ],
+            [
+                'suit' => 'clover',
+                'value' => 10,
+                'string_representation' => '🃚' // Emoji representation for 10 of clovers
+            ]
+        ];
+
+        $this->assertSame($expected, $result);
+    }
 }

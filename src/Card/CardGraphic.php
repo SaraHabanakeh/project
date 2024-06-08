@@ -88,12 +88,7 @@ class CardGraphic extends Card
     {
         $suit = $this->getSuit();
         $value = $this->getValue();
-
-        if (isset($this->representation[$suit][$value])) {
-            return $this->representation[$suit][$value];
-        } else {
-            return 'Invalid card';
-        }
+        return $this->representation[$suit][$value] ?? 'Invalid card';
     }
 
     /**

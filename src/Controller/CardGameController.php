@@ -19,9 +19,9 @@ class CardGameController extends AbstractController
      * Display the current session data.
      *
      * @Route("/session", name="session_debug")
-     * 
+     *
      * @param SessionInterface $session The session interface.
-     * 
+     *
      * @return Response
      */
 
@@ -38,9 +38,9 @@ class CardGameController extends AbstractController
      * Clear the session data.
      *
      * @Route("/session/delete", name="session_delete")
-     * 
+     *
      * @param SessionInterface $session The session interface.
-     * 
+     *
      * @return Response
      */
 
@@ -56,7 +56,7 @@ class CardGameController extends AbstractController
      * Display the home page for the card game.
      *
      * @Route("/card", name="card_start")
-     * 
+     *
      * @return Response
      */
 
@@ -70,7 +70,7 @@ class CardGameController extends AbstractController
      * Display the deck of cards.
      *
      * @Route("/card/deck", name="card_deck")
-     * 
+     *
      * @return Response
      */
 
@@ -87,9 +87,9 @@ class CardGameController extends AbstractController
      * Shuffle the deck of cards and clear the session.
      *
      * @Route("/card/deck/shuffle", name="card_shuffle")
-     * 
+     *
      * @param SessionInterface $session The session interface.
-     * 
+     *
      * @return Response
      */
 
@@ -108,9 +108,9 @@ class CardGameController extends AbstractController
      * Draw a card from the deck and add it to the hand.
      *
      * @Route("/card/deck/draw", name="card_draw")
-     * 
+     *
      * @param SessionInterface $session The session interface.
-     * 
+     *
      * @return Response
      */
 
@@ -138,10 +138,10 @@ class CardGameController extends AbstractController
      * Draw a specified number of cards from the deck and add them to the hand.
      *
      * @Route("/card/deck/draw/{num}", name="card_draw_number")
-     * 
+     *
      * @param SessionInterface $session The session interface.
      * @param int $num The number of cards to draw.
-     * 
+     *
      * @return Response
      */
 

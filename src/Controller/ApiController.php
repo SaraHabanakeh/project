@@ -33,7 +33,7 @@ class ApiController
      * Get a random daily quote.
      *
      * @Route("/api/quote", name="api-quote")
-     * 
+     *
      * @return Response
      */
     #[Route("/api/quote", name: "api-quote")]
@@ -61,7 +61,7 @@ class ApiController
      * Get a sorted deck of cards.
      *
      * @Route("/api/deck", name="api-deck")
-     * 
+     *
      * @return JsonResponse
      */
     #[Route("/api/deck", name:"api-deck")]
@@ -79,12 +79,12 @@ class ApiController
      * Shuffle the deck of cards and store it in the session.
      *
      * @Route("/api/deck/shuffle", name="api-shuffle", methods={"POST", "GET"})
-     * 
+     *
      * @param Request $request The HTTP request object.
      * @param SessionInterface $session The session interface.
-     * 
+     *
      * @return Response
-     * 
+     *
      * @throws LogicException If JSON encoding fails.
      */
 
@@ -118,13 +118,13 @@ class ApiController
      * Draw a specified number of cards from the deck.
      *
      * @Route("/api/deck/draw/{number}", name="api_draw_cards", methods={"POST", "GET"})
-     * 
+     *
      * @param Request $request The HTTP request object.
      * @param SessionInterface $session The session interface.
      * @param int $number The number of cards to draw.
-     * 
+     *
      * @return Response
-     * 
+     *
      * @throws LogicException If session data is corrupted or JSON encoding fails.
      */
     #[Route("/api/deck/draw/{number}", name: "api_draw_cards", methods: ['POST', 'GET'])]
@@ -174,9 +174,9 @@ class ApiController
      * Get the current state of the game, including players and bank data.
      *
      * @Route("/api/game", name="api_game")
-     * 
+     *
      * @param SessionInterface $session The session interface.
-     * 
+     *
      * @return JsonResponse
      */
 

@@ -1,0 +1,21 @@
+{% extends "base7.html.twig" %}
+
+{% block title %}Black Jack Setup{% endblock %}
+
+{% block main %}
+    <h4>Setup Players:</h4>
+    <form action="{{ path('proj_play') }}" method="post">
+        <input type="hidden" name="number_of_players" value="{{ number_of_players }}">
+        <div id="player_fields">
+            {% for i in 1..number_of_players %}
+                <div class="player-setup">
+                    <label for="player{{ i }}_name">Player {{ i }} Name:</label>
+                    <input type="text" id="player{{ i }}_name" name="players[{{ i-1 }}][name]" required class="input_proj">
+                    <label for="player{{ i }}_balance">Balance:</label>
+                    <input type="number" id="player{{ i }}_balance" name="players[{{ i-1 }}][balance]" required class="input_proj">
+                </div>
+            {% endfor %}
+        </div>
+        <button class="button_proj" type="submit">Start Playing</button>
+    </form>
+{% endblock %}

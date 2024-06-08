@@ -1,0 +1,16 @@
+{% extends "base7.html.twig" %}
+
+{% block title %}Choose Players{% endblock %}
+
+{% block main %}
+    <h4>Choose Number of Players:</h4>
+    <form action="{{ path('proj_setup') }}" method="post">
+        <label for="number_of_players">Number of Players:</label>
+        <select id="number_of_players" name="number_of_players" required>
+            <option value="1">1 Player</option>
+            <option value="2">2 Players</option>
+            <option value="3">3 Players</option>
+        </select>
+        <button class="button_proj" type="submit">Next</button>
+    </form>
+{% endblock %}

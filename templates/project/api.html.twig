@@ -1,0 +1,22 @@
+{# templates/project/start.html.twig #}
+
+{% extends 'base7.html.twig' %}
+
+{% block title %}Project Api{% endblock %}
+
+
+{% block main %}
+
+<h2>Json Api Routes:</h2>
+<a href="{{ path('api_intro') }}"><strong>proj/api/intro:</strong></a><p>Introduction about the Black Jack game.</p>
+
+<a href="{{ path('api_values', { 'num': 12 }) }}"><strong>proj/api/values/{num}:</strong></a><p>Get the value of the number regarding Black Jack game.</p>
+
+<a href="{{ path('api_bust') }}"><strong>proj/api/bust:</strong></a><p> Explaination about what does the 'BUST' mean in Black Jack game.</p>
+
+<a href="{{ path('api_blackjack') }}"><strong>proj/api/blackjack:</strong></a><p> Explaination about what does the 'BlackJack' mean in Black Jack game.</p>
+
+<a href="{{ path('api_rules') }}"><strong>proj/api/rules:</strong></a><p> Explaination about the rules in Black Jack game.</p>
+
+
+{% endblock %}

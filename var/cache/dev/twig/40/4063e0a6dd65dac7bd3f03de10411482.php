@@ -76,19 +76,23 @@ class __TwigTemplate_ca22c3cbd36d1180a91a5d121a3cb082 extends Template
             <ul>
                 <li class='li_proj'><a href=\"";
         // line 22
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_proj");
-        yield "\">Game</a></li>
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_start");
+        yield "\">Home</a></li>
                 <li class='li_proj'><a href=\"";
         // line 23
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about_proj");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_about");
         yield "\">About</a></li>
+                <li class='li_proj'><a href=\"";
+        // line 24
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_api");
+        yield "\">Api</a></li>
             </ul>
         </nav>
      <main class=\"main_proj\">
         ";
-        // line 27
-        yield from $this->unwrap()->yieldBlock('main', $context, $blocks);
         // line 28
+        yield from $this->unwrap()->yieldBlock('main', $context, $blocks);
+        // line 29
         yield "     </main>
     <footer>
     </footer>
@@ -195,7 +199,7 @@ class __TwigTemplate_ca22c3cbd36d1180a91a5d121a3cb082 extends Template
         return; yield '';
     }
 
-    // line 27
+    // line 28
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -235,7 +239,7 @@ class __TwigTemplate_ca22c3cbd36d1180a91a5d121a3cb082 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  199 => 27,  179 => 13,  168 => 14,  166 => 13,  161 => 12,  151 => 11,  137 => 8,  127 => 7,  107 => 5,  92 => 28,  90 => 27,  83 => 23,  79 => 22,  70 => 15,  68 => 11,  65 => 10,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
+        return array (  203 => 28,  183 => 13,  172 => 14,  170 => 13,  165 => 12,  155 => 11,  141 => 8,  131 => 7,  111 => 5,  96 => 29,  94 => 28,  87 => 24,  83 => 23,  79 => 22,  70 => 15,  68 => 11,  65 => 10,  63 => 7,  59 => 6,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -261,8 +265,9 @@ class __TwigTemplate_ca22c3cbd36d1180a91a5d121a3cb082 extends Template
     </body>
             <nav class= \"nav_proj\">
             <ul>
-                <li class='li_proj'><a href=\"{{ path('game_proj') }}\">Game</a></li>
-                <li class='li_proj'><a href=\"{{ path('about_proj') }}\">About</a></li>
+                <li class='li_proj'><a href=\"{{ path('proj_start') }}\">Home</a></li>
+                <li class='li_proj'><a href=\"{{ path('proj_about') }}\">About</a></li>
+                <li class='li_proj'><a href=\"{{ path('proj_api') }}\">Api</a></li>
             </ul>
         </nav>
      <main class=\"main_proj\">

@@ -118,9 +118,9 @@ När alla spelare har valt \"Stay\" är det dealerns tur. Dealern drar kort till
 <!-- Knapp för att starta spelet -->
 <form action=\"";
         // line 35
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("game_setup");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_setup");
         yield "\" method=\"post\">
-    <button class=\"button_proj\" type=\"submit\">Starta spelet</button>
+    <button class=\"button_proj\" type=\"submit\">Start Game</button>
 </form>
 
 
@@ -194,8 +194,8 @@ Dealerns tur:<br>
 När alla spelare har valt \"Stay\" är det dealerns tur. Dealern drar kort tills handen är värd minst 17. Om dealerns hand överstiger 21 blir dealern \"busted\" och förlorar automatiskt mot alla spelare som inte är \"busted\", de får dubblasina insats. Om dealerns hand är under 21, får alla spelare som har högre handvärde än dealern dubbla sin insats. Spelare som har lägre handvärde förlorar sin insats. Om dealern har högre handvärde än alla spelare, vinner dealern och får alla spelares insatser.</p>
 
 <!-- Knapp för att starta spelet -->
-<form action=\"{{ path('game_setup') }}\" method=\"post\">
-    <button class=\"button_proj\" type=\"submit\">Starta spelet</button>
+<form action=\"{{ path('proj_setup') }}\" method=\"post\">
+    <button class=\"button_proj\" type=\"submit\">Start Game</button>
 </form>
 
 

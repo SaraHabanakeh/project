@@ -1,0 +1,77 @@
+{% extends "base7.html.twig" %}
+
+{% block title %}Black Jack{% endblock %}
+
+{% block main %}
+    <h2>Players</h2>
+    <ul>
+        {% for player in players %}
+            <li class="player">
+                <strong>{{ player.getName() }}</strong><br>
+                Balance: {{ player.getBalance() }} <div class="coin">{{ player.getBalanceGraphic() }}</div><br>
+                {% for card in player.getHand().getCards() %}
+                    <span class="card {{ card.getSuitClass() }}">{{ card.getAsString() }}</span>
+                {% endfor %}
+                <br>
+                Total Value: {{ player.getHandValue() }}
+                <br>
+                {% if player.getStatus() != 'done' %}
+                    <form action="{{ path('proj_hit', {'playerIndex': loop.index0}) }}" method="post" style="display:inline;">
+                        <button class="button_proj1" type="submit">Hit</button>
+                    </form>
+                    <form action="{{ path('proj_stay', {'playerIndex': loop.index0}) }}" method="post" style="display:inline;">
+                        <button class="button_proj1" type="submit">Stay</button>
+                    </form>
+                {% else %}
+                    {% if player.isBusted() %}
+                        <p>Busted!</p>
+                    {% elseif player.hasBlackJack() %}
+                        <p>Blackjack!</p>
+                    {% endif %}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% set allPlayersDone = true %}
+    {% for player in players %}
+        {% if player.getStatus() != 'done' %}
+            {% set allPlayersDone = false %}
+        {% endif %}
+    {% endfor %}
+
+    {% if allPlayersDone %}
+        <form action="{{ path('proj_players') }}" method="post" style="display:inline;">
+            {{ include('black-jack/flash.html.twig') }}
+        </form>
+        <form action="{{ path('proj_reset') }}" method="post">
+            <button class="button_proj" type="submit">Play Again</button>
+        </form>
+    {% endif %}
+
+    <div class="bank">
+        <h2>Bank</h2>
+        <ul>
+            <li>
+                Balance: {{ bank.getBalance() }} <span class="coin">{{ bank.getBalanceGraphic() }}</span><br>
+                {% for card in bank.getHand().getCards() %}
+                    {% if loop.first or allPlayersDone %}
+                        <span class="card {{ card.getSuitClass() }}">{{ card.getAsString() }}</span>
+                    {% else %}
+                        <span class="card back"></span>
+                    {% endif %}
+                {% endfor %}
+                <br>
+                Total Value: 
+                {% if allPlayersDone %}
+                    {{ bank.getHandValue() }}
+                    {% if bank.isBusted() %}
+                        (Busted!)
+                    {% endif %}
+                {% else %}
+                    🂠
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+{% endblock %}

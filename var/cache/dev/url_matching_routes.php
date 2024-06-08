@@ -38,8 +38,22 @@ return [
         '/report' => [[['_route' => 'report', '_controller' => 'App\\Controller\\PresentationController::report'], null, null, null, false, false, null]],
         '/lucky' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\PresentationController::lucky'], null, null, null, false, false, null]],
         '/metrics' => [[['_route' => 'code_metrics', '_controller' => 'App\\Controller\\PresentationController::metrics'], null, null, null, true, false, null]],
-        '/proj' => [[['_route' => 'project', '_controller' => 'App\\Controller\\PresentationController::proj'], null, null, null, false, false, null]],
+        '/proj' => [
+            [['_route' => 'project', '_controller' => 'App\\Controller\\PresentationController::proj'], null, null, null, false, false, null],
+            [['_route' => 'proj_start', '_controller' => 'App\\Controller\\ProjectGame::start'], null, null, null, false, false, null],
+        ],
         '/api' => [[['_route' => 'api', '_controller' => 'App\\Controller\\PresentationController::api'], null, null, null, false, false, null]],
+        '/proj/api/intro' => [[['_route' => 'api_intro', '_controller' => 'App\\Controller\\ProjectApiController::game'], null, null, null, false, false, null]],
+        '/proj/api/bust' => [[['_route' => 'api_bust', '_controller' => 'App\\Controller\\ProjectApiController::bust'], null, null, null, false, false, null]],
+        '/proj/api/blackjack' => [[['_route' => 'api_blackjack', '_controller' => 'App\\Controller\\ProjectApiController::blackjack'], null, null, null, false, false, null]],
+        '/proj/api/rules' => [[['_route' => 'api_rules', '_controller' => 'App\\Controller\\ProjectApiController::rule'], null, null, null, false, false, null]],
+        '/proj/about' => [[['_route' => 'proj_about', '_controller' => 'App\\Controller\\ProjectGame::about'], null, null, null, false, false, null]],
+        '/proj/players' => [[['_route' => 'proj_players', '_controller' => 'App\\Controller\\ProjectGame::choosePlayers'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/proj/setup' => [[['_route' => 'proj_setup', '_controller' => 'App\\Controller\\ProjectGame::setup'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/proj/api' => [[['_route' => 'proj_api', '_controller' => 'App\\Controller\\ProjectGame::api'], null, null, null, false, false, null]],
+        '/proj/play' => [[['_route' => 'proj_play', '_controller' => 'App\\Controller\\ProjectGame::play'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/proj/dealer' => [[['_route' => 'proj_dealer', '_controller' => 'App\\Controller\\ProjectGame::dealer'], null, null, null, false, false, null]],
+        '/proj/reset' => [[['_route' => 'proj_reset', '_controller' => 'App\\Controller\\ProjectGame::reset'], null, ['POST' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -73,6 +87,11 @@ return [
                     .'|delete/([^/]++)(*:373)'
                 .')'
                 .'|/card/deck/draw/([^/]++)(*:406)'
+                .'|/proj/(?'
+                    .'|api/values/([^/]++)(*:442)'
+                    .'|hit/([^/]++)(*:462)'
+                    .'|stay/([^/]++)(*:483)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -91,8 +110,11 @@ return [
         329 => [[['_route' => 'show_book', '_controller' => 'App\\Controller\\BookController::show'], ['title'], null, null, false, true, null]],
         350 => [[['_route' => 'edit_book', '_controller' => 'App\\Controller\\BookController::edit'], ['title'], null, null, false, true, null]],
         373 => [[['_route' => 'delete_book', '_controller' => 'App\\Controller\\BookController::delete'], ['title'], null, null, false, true, null]],
-        406 => [
-            [['_route' => 'card_draw_number', '_controller' => 'App\\Controller\\CardGameController::drawMultipleCards'], ['num'], null, null, false, true, null],
+        406 => [[['_route' => 'card_draw_number', '_controller' => 'App\\Controller\\CardGameController::drawMultipleCards'], ['num'], null, null, false, true, null]],
+        442 => [[['_route' => 'api_values', '_controller' => 'App\\Controller\\ProjectApiController::values'], ['num'], ['POST' => 0, 'GET' => 1], null, false, true, null]],
+        462 => [[['_route' => 'proj_hit', '_controller' => 'App\\Controller\\ProjectGame::hit'], ['playerIndex'], null, null, false, true, null]],
+        483 => [
+            [['_route' => 'proj_stay', '_controller' => 'App\\Controller\\ProjectGame::stay'], ['playerIndex'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

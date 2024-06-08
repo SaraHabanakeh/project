@@ -81,6 +81,11 @@ Search.appendIndex(
             "summary": "Calculates\u0020the\u0020total\u0020value\u0020of\u0020the\u0020cards\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Card-CardHand.html#method_totalValue"
         },                {
+            "fqsen": "\\App\\Card\\CardHand\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "Converts\u0020the\u0020hand\u0020of\u0020cards\u0020to\u0020an\u0020array\u0020representation.",
+            "url": "classes/App-Card-CardHand.html#method_toArray"
+        },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003A\u0024cards",
             "name": "cards",
             "summary": "",
@@ -450,6 +455,101 @@ Search.appendIndex(
             "name": "api",
             "summary": "",
             "url": "classes/App-Controller-PresentationController.html#method_api"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectApiController",
+            "name": "ProjectApiController",
+            "summary": "Controller\u0020for\u0020managing\u0020API\u0020endpoints\u0020for\u0020various\u0020functionalities.",
+            "url": "classes/App-Controller-ProjectApiController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectApiController\u003A\u003Agame\u0028\u0029",
+            "name": "game",
+            "summary": "Get\u0020a\u0020short\u0020intro\u0020about\u0020BLACKJACK\u0020game.",
+            "url": "classes/App-Controller-ProjectApiController.html#method_game"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectApiController\u003A\u003Avalues\u0028\u0029",
+            "name": "values",
+            "summary": "Get\u0020the\u0020value\u0020of\u0020a\u0020specific\u0020number\u0020regarding\u0020on\u0020blackjack\u0020game.",
+            "url": "classes/App-Controller-ProjectApiController.html#method_values"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectApiController\u003A\u003Abust\u0028\u0029",
+            "name": "bust",
+            "summary": "Get\u0020the\u0020Explenation\u0020about\u0020\u0027BUST\u0027.",
+            "url": "classes/App-Controller-ProjectApiController.html#method_bust"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectApiController\u003A\u003Ablackjack\u0028\u0029",
+            "name": "blackjack",
+            "summary": "Get\u0020the\u0020definition\u0020about\u0020the\u0020term\u0020\u0027BLACKJACK\u0027\u0020.",
+            "url": "classes/App-Controller-ProjectApiController.html#method_blackjack"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectApiController\u003A\u003Arule\u0028\u0029",
+            "name": "rule",
+            "summary": "Get\u0020the\u0020Game\u0020rules\u0020.",
+            "url": "classes/App-Controller-ProjectApiController.html#method_rule"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame",
+            "name": "ProjectGame",
+            "summary": "Controller\u0020for\u0020managing\u0020a\u0020Blackjack\u0020game.",
+            "url": "classes/App-Controller-ProjectGame.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Astart\u0028\u0029",
+            "name": "start",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectGame.html#method_start"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Aabout\u0028\u0029",
+            "name": "about",
+            "summary": "Render\u0020about\u0020page\u0020that\u0020include\u0020an\u0020intro\u0020about\u0020the\u0020project\/game\u0020and\u0020its\u0020rules.",
+            "url": "classes/App-Controller-ProjectGame.html#method_about"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003AchoosePlayers\u0028\u0029",
+            "name": "choosePlayers",
+            "summary": "Render\u0020the\u0020players\u0020form\u0020to\u0020choose\u0020how\u0020many\u0020players\u0020will\u0020play.",
+            "url": "classes/App-Controller-ProjectGame.html#method_choosePlayers"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Asetup\u0028\u0029",
+            "name": "setup",
+            "summary": "Render\u0020the\u0020setup\u0020form\u0020for\u0020starting\u0020the\u0020game,\u0020where\u0020players\u0020enter\u0020their\u0020names\u0020and\u0020balance.",
+            "url": "classes/App-Controller-ProjectGame.html#method_setup"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Aapi\u0028\u0029",
+            "name": "api",
+            "summary": "Render\u0020the\u0020api\u0020tamplate\u0020that\u0020include\u00205\u0020api\u0020routes.",
+            "url": "classes/App-Controller-ProjectGame.html#method_api"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Aplay\u0028\u0029",
+            "name": "play",
+            "summary": "Start\u0020the\u0020game\u0020with\u0020the\u0020given\u0020players.",
+            "url": "classes/App-Controller-ProjectGame.html#method_play"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Ahit\u0028\u0029",
+            "name": "hit",
+            "summary": "Handle\u0020the\u0020\u0027hit\u0027\u0020action\u0020for\u0020a\u0020player.",
+            "url": "classes/App-Controller-ProjectGame.html#method_hit"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Astay\u0028\u0029",
+            "name": "stay",
+            "summary": "Handle\u0020the\u0020\u0027stay\u0027\u0020action\u0020for\u0020a\u0020player.",
+            "url": "classes/App-Controller-ProjectGame.html#method_stay"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Adealer\u0028\u0029",
+            "name": "dealer",
+            "summary": "Handle\u0020the\u0020dealer\u0027s\u0020actions\u0020and\u0020determine\u0020the\u0020outcome\u0020of\u0020the\u0020game.",
+            "url": "classes/App-Controller-ProjectGame.html#method_dealer"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003Areset\u0028\u0029",
+            "name": "reset",
+            "summary": "Reset\u0020the\u0020game\u0020by\u0020clearing\u0020the\u0020session.",
+            "url": "classes/App-Controller-ProjectGame.html#method_reset"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003AareAllPlayersDone\u0028\u0029",
+            "name": "areAllPlayersDone",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectGame.html#method_areAllPlayersDone"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectGame\u003A\u003AaddCardToPlayer\u0028\u0029",
+            "name": "addCardToPlayer",
+            "summary": "Check\u0020if\u0020all\u0020players\u0020are\u0020done\u0020with\u0020their\u0020actions.",
+            "url": "classes/App-Controller-ProjectGame.html#method_addCardToPlayer"
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",

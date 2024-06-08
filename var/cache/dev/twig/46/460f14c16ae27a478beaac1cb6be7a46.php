@@ -33,7 +33,7 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
 
     protected function doGetParent(array $context)
     {
-        // line 1
+        // line 3
         return "base7.html.twig";
     }
 
@@ -46,7 +46,7 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "project/proj.html.twig"));
 
-        $this->parent = $this->loadTemplate("base7.html.twig", "project/proj.html.twig", 1);
+        $this->parent = $this->loadTemplate("base7.html.twig", "project/proj.html.twig", 3);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -56,7 +56,7 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
 
     }
 
-    // line 3
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -66,7 +66,7 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Black Jack";
+        yield "Start Page";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -76,7 +76,7 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
         return; yield '';
     }
 
-    // line 5
+    // line 7
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,31 +86,16 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "main"));
 
-        // line 6
-        yield "    <h4>Setup Players:</h4>
-    <form action=\"";
-        // line 7
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("start_proj");
+        // line 8
+        yield "    <img src=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/logo.JPG"), "html", null, true);
+        yield "\" alt=\"Black jack game\" class=\"img_proj\">
+<form action=\"";
+        // line 9
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_players");
         yield "\" method=\"post\">
-        <label for=\"player1_name\">Player1 Name:</label>
-        <input type=\"text\" id=\"player1_name\" name=\"players[0][name]\" required class=\"input_proj\">
-        <label for=\"player1_balance\">Balance:</label>
-        <input type=\"number\" id=\"player1_balance\" name=\"players[0][balance]\" required class=\"input_proj\">
-
-
-        <label for=\"player2_name\">Player2 Name:</label>
-        <input type=\"text\" id=\"player2_name\" name=\"players[1][name]\" required class=\"input_proj\">
-        <label for=\"player2_balance\">Balance:</label>
-        <input type=\"number\" id=\"player2_balance\" name=\"players[1][balance]\" required class=\"input_proj\">
-
-
-        <label for=\"player3_name\">Player3 Name:</label>
-        <input type=\"text\" id=\"player3_name\" name=\"players[2][name]\" required class=\"input_proj\">
-        <label for=\"player3_balance\">Balance:</label>
-        <input type=\"number\" id=\"player3_balance\" name=\"players[2][balance]\" required class=\"input_proj\">
-
-        <button  class =\"button_proj\" type=\"submit\">Start Game</button>
-    </form>
+    <button  class =\"button_proj\" type=\"submit\">Start Game</button>
+</form>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -142,37 +127,23 @@ class __TwigTemplate_ec994f866c3a35f2f679d31b2fff9f5f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  93 => 7,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  95 => 9,  90 => 8,  80 => 7,  60 => 5,  37 => 3,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"base7.html.twig\" %}
+        return new Source("{# templates/project/start.html.twig #}
 
-{% block title %}Black Jack{% endblock %}
+{% extends 'base7.html.twig' %}
+
+{% block title %}Start Page{% endblock %}
 
 {% block main %}
-    <h4>Setup Players:</h4>
-    <form action=\"{{ path('start_proj') }}\" method=\"post\">
-        <label for=\"player1_name\">Player1 Name:</label>
-        <input type=\"text\" id=\"player1_name\" name=\"players[0][name]\" required class=\"input_proj\">
-        <label for=\"player1_balance\">Balance:</label>
-        <input type=\"number\" id=\"player1_balance\" name=\"players[0][balance]\" required class=\"input_proj\">
-
-
-        <label for=\"player2_name\">Player2 Name:</label>
-        <input type=\"text\" id=\"player2_name\" name=\"players[1][name]\" required class=\"input_proj\">
-        <label for=\"player2_balance\">Balance:</label>
-        <input type=\"number\" id=\"player2_balance\" name=\"players[1][balance]\" required class=\"input_proj\">
-
-
-        <label for=\"player3_name\">Player3 Name:</label>
-        <input type=\"text\" id=\"player3_name\" name=\"players[2][name]\" required class=\"input_proj\">
-        <label for=\"player3_balance\">Balance:</label>
-        <input type=\"number\" id=\"player3_balance\" name=\"players[2][balance]\" required class=\"input_proj\">
-
-        <button  class =\"button_proj\" type=\"submit\">Start Game</button>
-    </form>
-{% endblock %}", "project/proj.html.twig", "/Users/sarahabanakeh/dbwebb-kurser/mvc/me/report/templates/project/proj.html.twig");
+    <img src=\"{{ asset('img/logo.JPG') }}\" alt=\"Black jack game\" class=\"img_proj\">
+<form action=\"{{ path('proj_players') }}\" method=\"post\">
+    <button  class =\"button_proj\" type=\"submit\">Start Game</button>
+</form>
+{% endblock %}
+", "project/proj.html.twig", "/Users/sarahabanakeh/dbwebb-kurser/mvc/me/report/templates/project/proj.html.twig");
     }
 }

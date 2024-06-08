@@ -368,11 +368,12 @@
         <argument type="service" id=".service_locator.jUv.zyj.App\Controller\PresentationController"/>
       </call>
     </service>
-    <service id="App\Controller\Project" class="App\Controller\Project" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ProjectApiController" class="App\Controller\ProjectApiController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\ProjectGame" class="App\Controller\ProjectGame" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.jUv.zyj.App\Controller\Project"/>
+        <argument type="service" id=".service_locator.jUv.zyj.App\Controller\ProjectGame"/>
       </call>
     </service>
     <service id="App\Form\BookType" class="App\Form\BookType" autowire="true" autoconfigure="true">
@@ -1642,6 +1643,7 @@
         <argument key="App\Card\CoinGraphic" type="service_closure" id="App\Card\CoinGraphic" on-invalid="ignore_uninitialized"/>
         <argument key="App\Card\DeckOfCards" type="service_closure" id="App\Card\DeckOfCards" on-invalid="ignore_uninitialized"/>
         <argument key="App\Controller\ApiController" type="service_closure" id="App\Controller\ApiController" on-invalid="ignore_uninitialized"/>
+        <argument key="App\Controller\ProjectApiController" type="service_closure" id="App\Controller\ProjectApiController" on-invalid="ignore_uninitialized"/>
         <argument key="App\Form\BookType" type="service_closure" id="App\Form\BookType" on-invalid="ignore_uninitialized"/>
         <argument key="App\Repository\BookRepository" type="service_closure" id="App\Repository\BookRepository" on-invalid="ignore_uninitialized"/>
         <argument key="Doctrine\Bundle\DoctrineBundle\Dbal\ManagerRegistryAwareConnectionProvider" type="service_closure" id="Doctrine\Bundle\DoctrineBundle\Dbal\ManagerRegistryAwareConnectionProvider" on-invalid="ignore_uninitialized"/>
@@ -7542,9 +7544,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PresentationController" class="App\Controller\PresentationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PresentationController" class="App\Controller\PresentationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\PresentationController" class="App\Controller\PresentationController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Project" class="App\Controller\Project" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Project" class="App\Controller\Project" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Project" class="App\Controller\Project" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ProjectGame" class="App\Controller\ProjectGame" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ProjectGame" class="App\Controller\ProjectGame" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ProjectGame" class="App\Controller\ProjectGame" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BookType" class="App\Form\BookType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BookType" class="App\Form\BookType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BookRepository" class="App\Repository\BookRepository" autowire="true" abstract="true"/>
@@ -8123,9 +8125,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jUv.zyj" method="withContext"/>
     </service>
-    <service id=".service_locator.jUv.zyj.App\Controller\Project" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Project"/>
-      <argument>App\Controller\Project</argument>
+    <service id=".service_locator.jUv.zyj.App\Controller\ProjectGame" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ProjectGame"/>
+      <argument>App\Controller\ProjectGame</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jUv.zyj" method="withContext"/>
     </service>
@@ -8304,7 +8306,7 @@
           <argument>App\Controller\BookController</argument>
           <argument>App\Controller\CardGameController</argument>
           <argument>App\Controller\PresentationController</argument>
-          <argument>App\Controller\Project</argument>
+          <argument>App\Controller\ProjectGame</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
