@@ -11,6 +11,7 @@
         <li><a href="#kmom03">Kmom03</a></li>
         <li><a href="#kmom04">Kmom04</a></li>
         <li><a href="#kmom05">Kmom05</a></li>
+        <li><a href="#kmom10">Kmom10</a></li>
 
     </ul>
 
@@ -57,4 +58,24 @@ Jag är generellt nöjd med min implementation eftersom den uppfyller kraven fö
     <p>Jag valde att strukturera applikationen enligt:Model som Hanterar datalagring och affärslogik. Jag använde Doctrine ORM för att mappa databasen till PHP-objekt, vilket gjorde det lättare att arbeta med databasen på ett objektorienterat sätt.
 Formulär: Användning av Symfony Forms för att skapa och redigera böcker.
 Controller: Hanterar användarinteraktioner och uppdaterar modellen och vyerna. Controllers använder sig av Symfony routing för att definiera hur olika URL:er ska hanteras.</p>
+
+
+<h2 id="kmom10">Kmom10</h2>
+<p><strong>Krav 1-3:</strong> Spelare och Grundläggande Spelmekanik
+Eftersom jag redan hade arbetat med kortklasserna i tidigare uppgifter, behövde jag inte börja från grunden. Först skapade jag en Player-klass som innehåller nödvändiga metoder för att skapa en spelare, hantera spelarens hand , spelarens tur och justera balansen. Jag implementerade metoder för att lägga till kort till spelarens hand, kontrollera om spelaren har en Blackjack, och uppdatera spelarens balans baserat på spelets utgång. Efter att ha definierat alla nödvändiga klasser för spelet, såsom DeckOfCards och Card, fortsatte jag med att skapa olika rutter för spelets logik.
+
+Jag skapade en player-rutt som renderade en formulärmall för att välja antal spelare. Nästa steg var att implementera setup-rutten, där användaren kunde ange spelarnas namn och balans. Slutligen implementerade jag play, hit, stay, dealer rutten som styr själva spelet. Denna rutt hanterade spelarnas interaktioner med kortleken och bankens agerande. För att organisera koden och säkerställa en enhetlig design skapade jag en grundmall (base7.html.twig) som jag importerade i alla spelets relaterade mallar. Jag tillämpade också en ny stil på dessa mallar för att förbättra användarupplevelsen och göra spelet mer visuellt tilltalande.
+</p>
+<p><strong>Krav 4: API-kontroller</strong>JFör att möta kravet på att skapa API-kontroller, utvecklade jag en API-kontroller med fem olika rutter som ger en omfattande förståelse för spelet och dess rules.Jag började med att skapa en ny API-kontroller som innehåller fem olika API-rutter. <strong>/proj/api/intro</strong>  Denna rutt ger en kort introduktion till spelet Blackjack,<strong>  /proj/api/bust</strong> Denna rutt förklarar vad det innebär att gå "bust" i spelet Blackjack.<strong> /proj/api/blackjack</strong> Denna rutt förklarar vad en Blackjack är och ger ett exempel på när en spelare har en Blackjack.,
+<strong> /proj/api/rules</strong>Denna rutt visar reglerna för spelet Blackjack. Alla de fyra rutten är GET rutten son returnerar  Informationen i ett JSON-format. Medan  <strong>/proj/api/value/{num}</strong> rutt tar emot ett nummer och returnerar dess värde i spelet Blackjack. Denna är en POST- och GET-rutt som hanterar värdet av ett postat nummer enligt Blackjack-reglerna. Det betyder att användaren kan skicka ett nummer och få tillbaka dess värde baserat på spelets regler.
+,
+</p>
+<p>Projektet var lagom utmanande och tidsramen passade mycket bra med de krav som ställdes. För mig innebar projektet ett fokus på de obligatoriska kraven och även på krav 4, vilket kändes som en väl avvägd och genomförbar uppgift.
+
+</p>
+<p>En av de största utmaningarna var att säkerställa att spelreglerna implementerades korrekt och att spelet fungerade utan buggar. Det krävde en del tid och noggrannhet att se till att alla aspekter av spelets logik fungerade som de skulle. Att hantera kortleken och spelarnas handlingar på ett sätt som både var konsekvent och intuitivt var en komplex uppgift som krävde flera iterativa förbättringar och tester.</p>
+
+<p>Något som underlättade projektet var att jag hade färdiga klasser från tidigare arbete som jag kunde bygga vidare på. Återanvändningen av dessa klasser var en av de mest nyttiga erfarenheterna och sparade mycket tid och ansträngning. Det gjorde det möjligt att fokusera mer på att förbättra och integrera funktionalitet snarare än att behöva bygga allt från grunden.</p>
+<p>Kursen har varit mycket lärorik och har gett mig djupare insikter i viktiga teknologier och metoder. Jag har lärt mig en hel del under varje moment, från att arbeta med klasser och kontroller till att använda Symfony-ramverket. Det var särskilt värdefullt att få praktisk erfarenhet av ORM för databasanslutningar och att förbättra kodkvaliteten genom enhetstester samt analysverktyg som Scrutinizer och PHP Metrics.</p>
+<p>Jag är mycket nöjd med kursens upplägg och den handledning som erbjudits. Lärarna har varit tillgängliga och hjälpsamma, vilket har gjort det lättare att förstå och lösa de problem som uppstod. Feedbacken på uppgifterna har varit konstruktiv och hjälpsam för att förbättra mina färdigheter.På en skala från 1 till 10 skulle jag ge kursen ett starkt betyg på 9. Det har varit en utmanande men mycket givande resa.</p>
 {% endblock %}
