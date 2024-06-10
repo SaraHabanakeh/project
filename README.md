@@ -14,10 +14,18 @@ För att köra den här webbplatsen lokalt, följ dessa steg:
 
 
 
-## Scrutinizer
+## Scrutinizer badges for mvc2
 
 [![Bild](public/img/quality3.png)](https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/)
 
 [![Bild](public/img/coverage4.png)](https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/)
 
 [![Bild](public/img/build2.png)](https://scrutinizer-ci.com/g/SaraHabanakeh/mvc2/)
+
+## Scrutinizer badges for project
+
+[![Bild](public/img/proj.png)](https://scrutinizer-ci.com/g/SaraHabanakeh/project/)
+
+[![Bild](public/img/proj2.png)](https://scrutinizer-ci.com/g/SaraHabanakeh/project/)
+
+[![Bild](public/img/proj3.png)](https://scrutinizer-ci.com/g/SaraHabanakeh/project/)
